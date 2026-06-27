@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Admin</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+<h2>👤 Profil Admin</h2>
+</div>
+
+<div class="container">
+
+<div class="profile-card">
+
+<img id="fotoAdmin"
+src="images/admin.png"
+style="width:140px;height:140px;border-radius:50%;object-fit:cover;">
+
+<br><br>
+
+<input type="file"
+id="pilihFoto"
+accept="image/*"
+onchange="gantiFoto()">
+
+<h2>Mas Raden Adi Pranata Setiawan</h2>
+
+<p>Administrator BloodChain Malaysia 2026</p>
+
+<hr>
+
+<p><b>Universitas :</b> Universitas Islam Madura</p>
+
+<p><b>Program Studi :</b> Teknik Informatika</p>
+
+<p><b>Versi :</b> BloodChain v2.1</p>
+
+<br>
+
+<a href="dashboard.html">
+<button>Kembali ke Dashboard</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+let foto = localStorage.getItem("fotoAdmin");
+
+if(foto){
+document.getElementById("fotoAdmin").src = foto;
+}
+
+function gantiFoto(){
+
+let file = document.getElementById("pilihFoto").files[0];
+
+if(!file) return;
+
+let reader = new FileReader();
+
+reader.onload = function(e){
+
+document.getElementById("fotoAdmin").src = e.target.result;
+
+localStorage.setItem("fotoAdmin", e.target.result);
+
+};
+
+reader.readAsDataURL(file);
+
+}
+</script>
+
+</body>
+</html>
