@@ -325,3 +325,65 @@ to{
 }
 
 }
+/* ===== Admin Menu ===== */
+
+.admin{
+position:relative;
+cursor:pointer;
+user-select:none;
+}
+
+.admin-menu{
+
+display:none;
+
+position:absolute;
+
+right:0;
+
+top:55px;
+
+width:180px;
+
+background:#fff;
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+overflow:hidden;
+
+z-index:999;
+
+}
+
+.admin-menu a{
+
+display:block;
+
+padding:14px;
+
+text-decoration:none;
+
+color:#333;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.admin-menu a:hover{
+
+background:#075E54;
+
+color:white;
+
+}
+
+.admin.active .admin-menu{
+
+display:block;
+
+}
+

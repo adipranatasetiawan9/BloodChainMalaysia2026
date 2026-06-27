@@ -21,9 +21,18 @@
 
 </div>
 
-<div class="admin">
+<div class="admin" onclick="toggleAdminMenu()">
+👤 <span>Admin</span>
 
-👤 Admin
+<div id="adminMenu" class="admin-menu">
+
+<a href="profile.html">👤 Profil</a>
+
+<a href="setting.html">⚙️ Pengaturan</a>
+
+<a href="login.html">🚪 Logout</a>
+
+</div>
 
 </div>
 
@@ -239,6 +248,26 @@ animasiAngka("totalBlockchain",blockchain.length);
 updateDashboard();
 
 window.addEventListener("storage",updateDashboard);
+</script>
+
+<script>
+
+function toggleAdminMenu(){
+
+document.querySelector(".admin").classList.toggle("active");
+
+}
+
+window.onclick=function(e){
+
+if(!e.target.closest(".admin")){
+
+document.querySelector(".admin").classList.remove("active");
+
+}
+
+}
+
 </script>
 </body>
 </html>
