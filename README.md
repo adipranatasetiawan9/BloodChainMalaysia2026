@@ -2,7 +2,7 @@
 
 ## Digital Supply Chain Transfusi Darah Berbasis Blockchain
 
-BloodChain Malaysia 2026 merupakan aplikasi simulasi Digital Supply Chain Transfusi Darah berbasis Blockchain yang dikembangkan sebagai proyek mata kuliah Anti Semester 6.
+BloodChain Malaysia 2026 merupakan aplikasi simulasi Digital Supply Chain Transfusi Darah berbasis Blockchain yang dikembangkan sebagai proyek mata kuliah Anti TI Semester 6.
 
 ## Fitur Aplikasi
 
