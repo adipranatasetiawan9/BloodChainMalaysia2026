@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Permintaan Darah</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<h2>📦 Permintaan Darah</h2>
+
+</header>
+
+<div class="container">
+
+<h2>Form Permintaan Darah</h2>
+
+<input type="text" id="pasien" placeholder="Nama Pasien">
+
+<input type="text" id="rumahsakit" placeholder="Rumah Sakit">
+
+<select id="goldar">
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+
+</select>
+
+<input type="number" id="kantong" placeholder="Jumlah Kantong">
+
+<button onclick="tambahPermintaan()">
+
+Kirim Permintaan
+
+</button>
+
+<h2>Daftar Permintaan</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Pasien</th>
+
+<th>Rumah Sakit</th>
+
+<th>Golongan</th>
+
+<th>Kantong</th>
+
+<th>Status</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelPermintaan">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

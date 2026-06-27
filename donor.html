@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Pendonor</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+<h2>🩸 Data Pendonor</h2>
+</header>
+
+<div class="container">
+
+<h2>Tambah Pendonor</h2>
+
+<input type="text" id="nama" placeholder="Nama Pendonor">
+
+<select id="goldar">
+<option value="">Pilih Golongan Darah</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+</select>
+
+<input type="date" id="tanggal">
+
+<input type="text" id="lokasi" placeholder="Lokasi Donor">
+
+<button onclick="tambahPendonor()">
+Simpan Data
+</button>
+
+<h2>Daftar Pendonor</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nama</th>
+
+<th>Golongan</th>
+
+<th>Tanggal</th>
+
+<th>Lokasi</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelPendonor">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

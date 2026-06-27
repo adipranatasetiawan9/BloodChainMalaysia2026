@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blockchain BloodChain Malaysia 2026</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<h2>⛓ Blockchain Transfusi Darah</h2>
+
+</header>
+
+<div class="container">
+
+<h2>Tambah Block Baru</h2>
+
+<input type="text" id="donor" placeholder="Nama Pendonor">
+
+<select id="goldar">
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+
+</select>
+
+<input type="text" id="hospital" placeholder="Rumah Sakit">
+
+<button onclick="buatBlock()">
+
+Tambah Block
+
+</button>
+
+<h2>Riwayat Blockchain</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Block</th>
+
+<th>Pendonor</th>
+
+<th>Golongan</th>
+
+<th>Rumah Sakit</th>
+
+<th>Timestamp</th>
+
+<th>Previous Hash</th>
+
+<th>Hash</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelBlockchain">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

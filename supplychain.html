@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Supply Chain Darah</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<h2>🚚 Supply Chain Transfusi Darah</h2>
+
+</header>
+
+<div class="container">
+
+<h2>Tambah Distribusi</h2>
+
+<input type="text" id="kantong" placeholder="ID Kantong Darah">
+
+<input type="text" id="asal" placeholder="Asal">
+
+<input type="text" id="tujuan" placeholder="Tujuan">
+
+<select id="status">
+
+<option>Diproses</option>
+
+<option>Diverifikasi</option>
+
+<option>Dalam Perjalanan</option>
+
+<option>Tiba di Rumah Sakit</option>
+
+<option>Selesai</option>
+
+</select>
+
+<button onclick="tambahDistribusi()">
+
+Simpan Distribusi
+
+</button>
+
+<h2>Riwayat Distribusi</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID Kantong</th>
+
+<th>Asal</th>
+
+<th>Tujuan</th>
+
+<th>Status</th>
+
+<th>Waktu</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelDistribusi">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

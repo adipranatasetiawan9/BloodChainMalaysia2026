@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Rumah Sakit</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<h2>🏥 Data Rumah Sakit</h2>
+
+</header>
+
+<div class="container">
+
+<h2>Tambah Rumah Sakit</h2>
+
+<input type="text" id="namaRs" placeholder="Nama Rumah Sakit">
+
+<input type="text" id="kota" placeholder="Kota">
+
+<select id="negara">
+
+<option>Malaysia</option>
+
+<option>Indonesia</option>
+
+<option>Singapura</option>
+
+<option>Brunei</option>
+
+</select>
+
+<input type="text" id="telepon" placeholder="Nomor Telepon">
+
+<button onclick="tambahRumahSakit()">
+
+Simpan Data
+
+</button>
+
+<h2>Daftar Rumah Sakit</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nama</th>
+
+<th>Kota</th>
+
+<th>Negara</th>
+
+<th>Telepon</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelRs">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

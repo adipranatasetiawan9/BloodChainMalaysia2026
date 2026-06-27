@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stok Darah</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<h2>🩸 Stok Darah</h2>
+
+</header>
+
+<div class="container">
+
+<h2>Tambah Stok Darah</h2>
+
+<select id="goldar">
+
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option>O+</option>
+<option>O-</option>
+
+</select>
+
+<input type="number" id="jumlah" placeholder="Jumlah Kantong">
+
+<button onclick="tambahStok()">
+
+Tambah Stok
+
+</button>
+
+<h2>Daftar Stok Darah</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Golongan Darah</th>
+
+<th>Jumlah Kantong</th>
+
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelStok">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
