@@ -39,7 +39,7 @@
 
 <h3>Total Pendonor</h3>
 
-<h1>0</h1>
+<h1 id="totalPendonor">0</h1>
 
 </div>
 
@@ -47,7 +47,7 @@
 
 <h3>Rumah Sakit</h3>
 
-<h1>0</h1>
+<h1 id="totalRumahSakit">0</h1>
 
 </div>
 
@@ -55,7 +55,7 @@
 
 <h3>Stok Darah</h3>
 
-<h1>0</h1>
+<h1 id="totalStok">0</h1>
 
 </div>
 
@@ -63,7 +63,7 @@
 
 <h3>Blockchain</h3>
 
-<h1>0</h1>
+<h1 id="totalBlockchain">0</h1>
 
 </div>
 
@@ -181,6 +181,64 @@ Developed by
 <a href="#">☰<br>Menu</a>
 
 </div>
+<script>
+function animasiAngka(id, tujuan){
 
+let elemen=document.getElementById(id);
+
+let angka=0;
+
+let kecepatan=Math.max(1,Math.ceil(tujuan/40));
+
+let interval=setInterval(function(){
+
+angka+=kecepatan;
+
+if(angka>=tujuan){
+
+angka=tujuan;
+
+clearInterval(interval);
+
+}
+
+elemen.textContent=angka;
+
+},30);
+
+}
+
+function updateDashboard(){
+
+const pendonor=JSON.parse(localStorage.getItem("pendonor"))||[];
+
+const rumahsakit=JSON.parse(localStorage.getItem("rumahsakit"))||[];
+
+const stok=JSON.parse(localStorage.getItem("stokdarah"))||[];
+
+const blockchain=JSON.parse(localStorage.getItem("blockchain"))||[];
+
+let totalStok=0;
+
+stok.forEach(function(item){
+
+totalStok+=Number(item.jumlah)||0;
+
+});
+
+animasiAngka("totalPendonor",pendonor.length);
+
+animasiAngka("totalRumahSakit",rumahsakit.length);
+
+animasiAngka("totalStok",totalStok);
+
+animasiAngka("totalBlockchain",blockchain.length);
+
+}
+
+updateDashboard();
+
+window.addEventListener("storage",updateDashboard);
+</script>
 </body>
 </html>
