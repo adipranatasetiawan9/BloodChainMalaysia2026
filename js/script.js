@@ -497,6 +497,23 @@ tabel.innerHTML+=`
 
 <td>
 
+<button onclick="editDistribusi(${index})">
+✏️ Edit
+</button>
+
+<button onclick="hapusDistribusi(${index})">
+🗑 Hapus
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
 function hapusDistribusi(index){
 
 distribusi.splice(index,1);
@@ -511,18 +528,6 @@ tampilDistribusi();
 }
 
 function editDistribusi(index){
-
-<td>
-
-<button onclick="editDistribusi(${index})">
-✏️ Edit
-</button>
-
-<button onclick="hapusDistribusi(${index})">
-🗑 Hapus
-</button>
-
-</td>
 
 let data=distribusi[index];
 
@@ -579,8 +584,8 @@ hasil.innerHTML=`
 <p><b>Hash :</b> 0xA89D18C72F9E1AA</p>
 
 `;
-
 }
+
 function tampilHistory(){
 
 let tabel=document.getElementById("tabelHistory");
