@@ -453,3 +453,119 @@ width:100%;
 height:18px;
 }
 
+/* ==========================
+   Bubble Background Animation
+========================== */
+
+body{
+overflow-x:hidden;
+position:relative;
+}
+
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:250px;
+height:250px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+filter:blur(20px);
+animation:bubbleMove 60s infinite alternate;
+z-index:-1;
+}
+
+body::before{
+top:10%;
+left:-80px;
+}
+
+body::after{
+bottom:5%;
+right:-80px;
+animation-delay:24s;
+}
+
+@keyframes bubbleMove{
+0%{
+transform:translateY(0) scale(1);
+}
+100%{
+transform:translateY(-40px) scale(1.2);
+}
+}
+
+/* ==========================
+   Star Background Animation
+========================== */
+
+.star{
+position:fixed;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+0%{opacity:.2;}
+50%{opacity:1;}
+100%{opacity:.2;}
+}
+
+/* ==========================
+    Background Animation
+========================== */
+
+.menu-item{
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.menu-item:hover{
+transform:translateX(8px);
+background:#e8f5e9;
+}
+
+.menu-item:active{
+transform:scale(.97);
+}
+
+/* ==========================
+   Gelombang Background Animation
+========================== */
+
+.menu-item::after{
+content:"";
+position:absolute;
+width:0;
+height:0;
+background:rgba(255,255,255,.5);
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+transition:.5s;
+}
+
+.menu-item:active::after{
+width:300px;
+height:300px;
+opacity:0;
+}
+
+/* ==========================
+   Dashboard Hidup  Background Animation
+========================== */
+
+.card{
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
