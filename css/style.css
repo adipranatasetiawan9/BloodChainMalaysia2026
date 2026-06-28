@@ -597,20 +597,21 @@ transform:scale(.5);
 
 .wave{
 position:fixed;
-left:0;
-bottom:0;
-width:220%;
-height:260px;
+left:-20%;
+bottom:-80px;
+width:240%;
+height:350px;
 background:linear-gradient(
 180deg,
-rgba(0,180,255,.15),
-rgba(0,119,255,.55),
-rgba(0,80,200,.9)
+rgba(0,180,255,.20),
+rgba(0,119,255,.65),
+rgba(0,80,200,1)
 );
 border-radius:45% 55% 0 0;
-animation:waveMove 18s linear infinite;
-z-index:-3;
-opacity:.9;
+animation:waveMove 18s ease-in-out infinite;
+z-index:0;
+opacity:1;
+pointer-events:none;
 }
 
 .wave2{
