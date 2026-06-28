@@ -646,7 +646,7 @@ isi.indexOf(input)>-1?
 
 tampilHistory();
 
-if(document.getElementById("reader")){
+if(document.getElementById("reader") && typeof Html5Qrcode !== "undefined"){
 
 const qr=new Html5Qrcode("reader");
 
