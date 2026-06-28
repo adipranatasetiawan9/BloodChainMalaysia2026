@@ -497,61 +497,50 @@ tabel.innerHTML+=`
 
 <td>
 
+function hapusDistribusi(index){
+
+distribusi.splice(index,1);
+
+localStorage.setItem(
+"distribusi",
+JSON.stringify(distribusi)
+);
+
+tampilDistribusi();
+
+}
+
+function editDistribusi(index){
+
+<td>
+
+<button onclick="editDistribusi(${index})">
+✏️ Edit
+</button>
+
 <button onclick="hapusDistribusi(${index})">
-
-Hapus
-
+🗑 Hapus
 </button>
 
 </td>
 
-</tr>
+let data=distribusi[index];
 
-`;
+let statusBaru=prompt(
+"Ubah Tahap Supply Chain:",
+data.status
+);
 
-});
+if(statusBaru==null || statusBaru=="") return;
 
-}
+distribusi[index].status=statusBaru;
 
-function tambahDistribusi(){
+distribusi[index].waktu=new Date().toLocaleString();
 
-let id=document.getElementById("kantong").value;
-
-let asal=document.getElementById("asal").value;
-
-let tujuan=document.getElementById("tujuan").value;
-
-let status=document.getElementById("status").value;
-
-if(id==""||asal==""||tujuan==""){
-
-alert("Lengkapi data");
-
-return;
-
-}
-
-distribusi.push({
-
-id,
-
-asal,
-
-tujuan,
-
-status,
-
-waktu:new Date().toLocaleString()
-
-});
-
-localStorage.setItem("distribusi",JSON.stringify(distribusi));
-
-document.getElementById("kantong").value="";
-
-document.getElementById("asal").value="";
-
-document.getElementById("tujuan").value="";
+localStorage.setItem(
+"distribusi",
+JSON.stringify(distribusi)
+);
 
 tampilDistribusi();
 
@@ -651,4 +640,40 @@ isi.indexOf(input)>-1?
 }
 
 tampilHistory();
+
+if(document.getElementById("reader")){
+
+const qr=new Html5Qrcode("reader");
+
+qr.start(
+
+{ facingMode:"environment" },
+
+{
+
+fps:10,
+
+qrbox:250
+
+},
+
+function(decodedText){
+
+document.getElementById("hasilQR").innerHTML=`
+
+<h3>✅ QR Berhasil Dipindai</h3>
+
+<p><b>ID :</b> ${decodedText}</p>
+
+<p>Status : Verified</p>
+
+`;
+
+},
+
+function(error){}
+
+);
+
+}
 

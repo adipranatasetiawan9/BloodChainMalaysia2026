@@ -4,48 +4,81 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Scan QR Code</title>
 
-<link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
+<link rel="stylesheet"
+href="css/style.css">
 
 <header class="topbar">
-
-<h2>📱 Scan QR Code Kantong Darah</h2>
-
+<h2>📱 Scan QR BloodChain</h2>
 </header>
 
 <div class="container">
 
-<h2>Masukkan Kode QR</h2>
+<div id="reader" style="width:100%;"></div>
 
-<input
-type="text"
-id="kodeQR"
-placeholder="Contoh : BCM20260001">
-
-<button onclick="scanQR()">
-
-Scan QR
-
-</button>
-
-<h2>Hasil Scan</h2>
-
-<div id="hasilQR">
-
-Belum ada data.
-
-</div>
+<div id="hasilQR"></div>
 
 </div>
 
 <script src="js/script.js"></script>
 
+</head>
+
+<body>
+
+<div class="topbar">
+
+<h2>📱 Scan QR Code</h2>
+
+</div>
+
+<div class="container">
+
+<div id="reader" style="width:100%;"></div>
+
+<h3>Hasil Scan</h3>
+
+<div id="hasil"
+style="padding:15px;
+background:#fff;
+border-radius:10px;
+margin-top:15px;">
+
+Belum ada QR Code
+
+</div>
+
+</div>
+
+<script>
+
+function berhasil(decodedText){
+
+document.getElementById("hasil").innerHTML=
+"<b>"+decodedText+"</b>";
+
+}
+
+new Html5QrcodeScanner(
+
+"reader",
+
+{
+
+fps:10,
+
+qrbox:250
+
+}
+
+).render(berhasil);
+
+</script>
+
 </body>
+
 </html>

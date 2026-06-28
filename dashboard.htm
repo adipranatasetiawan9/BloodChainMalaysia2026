@@ -78,29 +78,30 @@
 
 </div>
 
+<h3 class="judul-menu">
+
 <div class="statistik">
 
-<h2>ℹ Informasi Sistem</h2>
+<h2>📊 Statistik BloodChain</h2>
 
-<p>🩸 BloodChain Malaysia</p>
+<div class="progress-box">
+<label>Total Pendonor</label>
+<progress id="progPendonor" value="0" max="100"></progress>
+</div>
 
-<p>Version : <b>v5.0</b></p>
+<div class="progress-box">
+<label>Total Rumah Sakit</label>
+<progress id="progRs" value="0" max="100"></progress>
+</div>
 
-<p>Status : <span id="statusServer">🟢 Online</span></p>
-
-<p>Total Block : <span id="infoBlock">0</span></p>
-
-<p>Total Stok Darah : <span id="infoStok">0</span></p>
-
-<p>Waktu : <span id="jamSekarang"></span></p>
-
-<p>Last Update : <span id="lastUpdate"></span></p>
+<div class="progress-box">
+<label>Stok Darah</label>
+<progress id="progStok" value="0" max="500"></progress>
+</div>
 
 </div>
 
-<h3 class="judul-menu">
 Menu Utama
-</h3>
 
 </h3>
 
@@ -239,21 +240,6 @@ elemen.textContent=angka;
 
 function updateDashboard(){
 
-updateDashboard();
-
-window.addEventListener("storage",updateDashboard);
-
-// Jam Digital
-setInterval(function(){
-
-let sekarang = new Date();
-
-document.getElementById("jamSekarang").textContent =
-sekarang.toLocaleTimeString();
-
-},1000);
-</script>
-
 const pendonor=JSON.parse(localStorage.getItem("pendonor"))||[];
 
 const rumahsakit=JSON.parse(localStorage.getItem("rumahsakit"))||[];
@@ -276,24 +262,14 @@ animasiAngka("totalRumahSakit",rumahsakit.length);
 
 animasiAngka("totalStok",totalStok);
 
-if(totalStok<20){
-
-alert("⚠️ Peringatan: Stok darah mulai menipis!");
-
-}
 animasiAngka("totalBlockchain",blockchain.length);
 
-document.getElementById("infoBlock").textContent=blockchain.length;
+document.getElementById("progPendonor").value=pendonor.length;
 
-document.getElementById("infoStok").textContent=totalStok;
+document.getElementById("progRs").value=rumahsakit.length;
 
-let sekarang=new Date();
+document.getElementById("progStok").value=totalStok;
 
-document.getElementById("jamSekarang").textContent=
-sekarang.toLocaleTimeString();
-
-document.getElementById("lastUpdate").textContent=
-sekarang.toLocaleDateString();
 }
 
 updateDashboard();

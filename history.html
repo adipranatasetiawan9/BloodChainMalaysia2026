@@ -23,11 +23,35 @@
 
 <div class="container">
 
+<h2>Riwayat Distribusi Darah</h2>
+
 <input
 type="text"
 id="cari"
-placeholder="Cari Nama / Rumah Sakit..."
+placeholder="🔍 Cari berdasarkan ID, Rumah Sakit atau Status..."
 onkeyup="cariRiwayat()">
+
+<br><br>
+
+<label>Dari Tanggal</label>
+
+<input type="date" id="tanggalAwal">
+
+<label>Sampai</label>
+
+<input type="date" id="tanggalAkhir">
+
+<br><br>
+
+<button onclick="filterTanggal()">
+Filter
+</button>
+
+<button onclick="hapusSemuaRiwayat()">
+🗑 Hapus Semua
+</button>
+
+<br><br>
 
 <table>
 
@@ -62,3 +86,27 @@ onkeyup="cariRiwayat()">
 </body>
 
 </html>
+<script src="js/script.js"></script>
+
+<script>
+
+function hapusSemuaRiwayat(){
+
+if(confirm("Hapus seluruh riwayat?")){
+
+localStorage.removeItem("distribusi");
+
+tampilHistory();
+
+}
+
+}
+
+function filterTanggal(){
+
+alert("Fitur filter tanggal akan aktif pada versi 9.2");
+
+}
+
+</script>
+

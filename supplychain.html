@@ -22,35 +22,34 @@
 
 <div class="container">
 
-<h2>Tambah Distribusi</h2>
+<h2>🚚 Rantai Pasokan Transfusi Darah Malaysia</h2>
 
-<input type="text" id="kantong" placeholder="ID Kantong Darah">
+<label>ID Kantong Darah</label>
+<input type="text" id="kantong" placeholder="BCM-0001">
 
-<input type="text" id="asal" placeholder="Asal">
-
-<input type="text" id="tujuan" placeholder="Tujuan">
+<label>Tahap Supply Chain</label>
 
 <select id="status">
-
-<option>Diproses</option>
-
-<option>Diverifikasi</option>
-
-<option>Dalam Perjalanan</option>
-
-<option>Tiba di Rumah Sakit</option>
-
-<option>Selesai</option>
-
+<option>Pendonor</option>
+<option>Pusat Darah Negara Malaysia</option>
+<option>Pemeriksaan Laboratorium</option>
+<option>Penyimpanan Darah</option>
+<option>Distribusi</option>
+<option>Rumah Sakit</option>
+<option>Pasien</option>
 </select>
 
+<label>Lokasi Asal</label>
+<input type="text" id="asal" placeholder="Contoh: Pusat Darah Negara">
+
+<label>Lokasi Tujuan</label>
+<input type="text" id="tujuan" placeholder="Contoh: Hospital Kuala Lumpur">
+
 <button onclick="tambahDistribusi()">
-
-Simpan Distribusi
-
+💾 Simpan Data
 </button>
 
-<h2>Riwayat Distribusi</h2>
+<h2>Riwayat Supply Chain</h2>
 
 <table>
 
@@ -58,16 +57,11 @@ Simpan Distribusi
 
 <tr>
 
-<th>ID Kantong</th>
-
+<th>ID</th>
 <th>Asal</th>
-
 <th>Tujuan</th>
-
 <th>Status</th>
-
 <th>Waktu</th>
-
 <th>Aksi</th>
 
 </tr>
