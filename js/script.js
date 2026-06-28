@@ -682,3 +682,47 @@ function(error){}
 
 }
 
+/*=============================
+   BLOODCHAIN BACKGROUND
+=============================*/
+
+/* Bubble */
+
+for(let i=0;i<20;i++){
+
+let bubble=document.createElement("div");
+
+bubble.className="bubble";
+
+bubble.style.left=Math.random()*100+"%";
+
+bubble.style.width=(20+Math.random()*40)+"px";
+
+bubble.style.height=bubble.style.width;
+
+bubble.style.animationDuration=(10+Math.random()*15)+"s";
+
+bubble.style.animationDelay=(Math.random()*10)+"s";
+
+document.body.appendChild(bubble);
+
+}
+
+/* Star */
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*3+"s";
+
+document.body.appendChild(star);
+
+}
+
