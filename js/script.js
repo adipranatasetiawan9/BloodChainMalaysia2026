@@ -688,19 +688,20 @@ function(error){}
 
 /* Bubble */
 
-for(let i=0;i<20;i++){
+for(let i=0;i<12;i++){
 
 let bubble=document.createElement("div");
 
 bubble.className="bubble";
 
+let ukuran=80+Math.random()*200;
+
+bubble.style.width=ukuran+"px";
+bubble.style.height=ukuran+"px";
+
 bubble.style.left=Math.random()*100+"%";
 
-bubble.style.width=(20+Math.random()*40)+"px";
-
-bubble.style.height=bubble.style.width;
-
-bubble.style.animationDuration=(10+Math.random()*15)+"s";
+bubble.style.animationDuration=(20+Math.random()*20)+"s";
 
 bubble.style.animationDelay=(Math.random()*10)+"s";
 
@@ -710,17 +711,21 @@ document.body.appendChild(bubble);
 
 /* Star */
 
-for(let i=0;i<80;i++){
+for(let i=0;i<100;i++){
 
 let star=document.createElement("div");
 
 star.className="star";
 
-star.style.left=Math.random()*100+"%";
+let ukuran=3+Math.random()*5;
 
+star.style.width=ukuran+"px";
+star.style.height=ukuran+"px";
+
+star.style.left=Math.random()*100+"%";
 star.style.top=Math.random()*100+"%";
 
-star.style.animationDelay=Math.random()*3+"s";
+star.style.animationDelay=(Math.random()*3)+"s";
 
 document.body.appendChild(star);
 
