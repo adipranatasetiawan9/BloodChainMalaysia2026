@@ -682,11 +682,7 @@ function(error){}
 
 }
 
-/*=============================
-   BLOODCHAIN BACKGROUND
-=============================*/
-
-/* Bubble */
+/* PREMIUM GIANT BUBBLE */
 
 for(let i=0;i<12;i++){
 
@@ -694,40 +690,42 @@ let bubble=document.createElement("div");
 
 bubble.className="bubble";
 
-let ukuran=80+Math.random()*200;
+let size=180+Math.random()*170;
 
-bubble.style.width=ukuran+"px";
-bubble.style.height=ukuran+"px";
+bubble.style.width=size+"px";
+
+bubble.style.height=size+"px";
 
 bubble.style.left=Math.random()*100+"%";
 
-bubble.style.animationDuration=(20+Math.random()*20)+"s";
+bubble.style.animationDuration=(24+Math.random()*18)+"s";
 
-bubble.style.animationDelay=(Math.random()*10)+"s";
+bubble.style.animationDelay=(Math.random()*15)+"s";
 
 document.body.appendChild(bubble);
 
 }
 
-/* Star */
+/* PREMIUM STAR */
 
-for(let i=0;i<100;i++){
+for(let i=0;i<120;i++){
 
 let star=document.createElement("div");
 
 star.className="star";
 
-let ukuran=3+Math.random()*5;
+let size=4+Math.random()*6;
 
-star.style.width=ukuran+"px";
-star.style.height=ukuran+"px";
+star.style.width=size+"px";
+
+star.style.height=size+"px";
 
 star.style.left=Math.random()*100+"%";
+
 star.style.top=Math.random()*100+"%";
 
-star.style.animationDelay=(Math.random()*3)+"s";
+star.style.animationDelay=Math.random()*3+"s";
 
 document.body.appendChild(star);
 
 }
-
