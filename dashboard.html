@@ -102,8 +102,6 @@
 Menu Utama
 </h3>
 
-</h3>
-
 <a href="donor.html" class="menu-item">
 
 🩸 Data Pendonor
@@ -211,6 +209,7 @@ Developed by
 
 </div>
 <script>
+
 function animasiAngka(id, tujuan){
 
 let elemen=document.getElementById(id);
@@ -239,21 +238,6 @@ elemen.textContent=angka;
 
 function updateDashboard(){
 
-updateDashboard();
-
-window.addEventListener("storage",updateDashboard);
-
-// Jam Digital
-setInterval(function(){
-
-let sekarang = new Date();
-
-document.getElementById("jamSekarang").textContent =
-sekarang.toLocaleTimeString();
-
-},1000);
-</script>
-
 const pendonor=JSON.parse(localStorage.getItem("pendonor"))||[];
 
 const rumahsakit=JSON.parse(localStorage.getItem("rumahsakit"))||[];
@@ -276,29 +260,37 @@ animasiAngka("totalRumahSakit",rumahsakit.length);
 
 animasiAngka("totalStok",totalStok);
 
-if(totalStok<20){
-
-alert("⚠️ Peringatan: Stok darah mulai menipis!");
-
-}
 animasiAngka("totalBlockchain",blockchain.length);
 
 document.getElementById("infoBlock").textContent=blockchain.length;
 
 document.getElementById("infoStok").textContent=totalStok;
 
-let sekarang=new Date();
-
 document.getElementById("jamSekarang").textContent=
-sekarang.toLocaleTimeString();
+new Date().toLocaleTimeString();
 
 document.getElementById("lastUpdate").textContent=
-sekarang.toLocaleDateString();
+new Date().toLocaleDateString();
+
+if(totalStok<20){
+
+alert("⚠️ Peringatan: Stok darah mulai menipis!");
+
+}
+
 }
 
 updateDashboard();
 
 window.addEventListener("storage",updateDashboard);
+
+setInterval(function(){
+
+document.getElementById("jamSekarang").textContent=
+new Date().toLocaleTimeString();
+
+},1000);
+
 </script>
 
 <script>
