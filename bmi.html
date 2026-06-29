@@ -150,36 +150,78 @@ return;
 let bmi=(bb/(tb*tb)).toFixed(1);
 
 let kategori="";
+let keterangan="";
 
 if(bmi<18.5){
 
-kategori="Kurus | Kurus | Underweight";
+kategori="Kurus (Underweight)";
+
+keterangan=`
+<b>Rekomendasi:</b><br><br>
+
+• Berat badan Anda berada di bawah kisaran normal.<br>
+• Tingkatkan asupan kalori sehat dengan mengonsumsi nasi, roti gandum, kentang, oatmeal, telur, ikan, daging tanpa lemak, susu, keju, kacang-kacangan, alpukat, dan buah-buahan.<br>
+• Konsumsi makanan bergizi seimbang sebanyak 5 kali makan utama dan 3–5 kali makanan selingan setiap hari.<br>
+• Lakukan latihan kekuatan (strength training) untuk meningkatkan massa otot.<br>
+• Apabila berat badan terus menurun tanpa sebab yang jelas, segera lakukan pemeriksaan ke dokter atau ahli gizi.
+`;
 
 }
 
 else if(bmi<25){
 
-kategori="Normal | Normal | Normal";
+kategori="Berat Badan Ideal (Normal)";
+
+keterangan=`
+<b>Rekomendasi:</b><br><br>
+
+• Berat badan Anda berada dalam kategori ideal.<br>
+• Pertahankan pola makan bergizi seimbang sesuai Pedoman Gizi Seimbang.<br>
+• Perbanyak konsumsi sayur, buah, protein tanpa lemak, dan air putih yang cukup.<br>
+• Lakukan aktivitas fisik minimal 150 menit setiap minggu.<br>
+• Hindari konsumsi makanan tinggi gula, garam, dan lemak secara berlebihan agar berat badan tetap stabil.
+`;
 
 }
 
 else if(bmi<30){
 
-kategori="Gemuk | Berlebihan Berat | Overweight";
+kategori="Gemuk (Overweight)";
+
+keterangan=`
+<b>Rekomendasi:</b><br><br>
+
+• Berat badan Anda melebihi kisaran normal sehingga risiko penyakit metabolik mulai meningkat.<br>
+• Kurangi konsumsi makanan cepat saji, gorengan, minuman manis, dan makanan tinggi kalori.<br>
+• Perbanyak konsumsi sayur, buah, protein rendah lemak, dan makanan tinggi serat.<br>
+• Lakukan olahraga aerobik seperti jalan cepat, jogging, bersepeda, atau berenang minimal 30 menit setiap hari.<br>
+• Pantau berat badan secara berkala dan konsultasikan dengan tenaga kesehatan apabila diperlukan.
+`;
 
 }
 
 else{
 
-kategori="Obesitas | Obesiti | Obesity";
+kategori="Obesitas";
+
+keterangan=`
+<b>Rekomendasi:</b><br><br>
+
+• Nilai BMI menunjukkan kategori obesitas yang dapat meningkatkan risiko diabetes, hipertensi, penyakit jantung, stroke, dan gangguan metabolisme lainnya.<br>
+• Terapkan pola makan sehat dengan mengurangi gula, garam, lemak jenuh, serta makanan olahan.<br>
+• Tingkatkan aktivitas fisik secara bertahap sesuai kemampuan tubuh.<br>
+• Lakukan pemeriksaan kesehatan secara berkala untuk memantau tekanan darah, kadar gula darah, dan kolesterol.<br>
+• Sangat disarankan berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan program penurunan berat badan yang aman dan sesuai kondisi kesehatan.
+`;
 
 }
 
 document.getElementById("hasil").innerHTML=
 
-"<b>BMI :</b> "+bmi+
-
-"<br><br><b>Kategori :</b> "+kategori;
+"<h3>📊 Hasil Perhitungan BMI</h3>"+
+"<b>Nilai BMI :</b> "+bmi+
+"<br><br><b>Kategori :</b> "+kategori+
+"<br><br>"+keterangan;
 
 }
 
