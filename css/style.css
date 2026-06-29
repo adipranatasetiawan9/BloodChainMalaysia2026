@@ -597,36 +597,40 @@ transform:scale(.5);
 
 .wave{
 position:fixed;
-left:-20%;
-bottom:-80px;
-width:240%;
-height:350px;
+left:-25%;
+bottom:-140px;
+width:160%;
+height:240px;
 background:linear-gradient(
 180deg,
-rgba(0,180,255,.20),
-rgba(0,119,255,.65),
-rgba(0,80,200,1)
+rgba(0,180,255,.12),
+rgba(0,119,255,.45),
+rgba(0,80,200,.75)
 );
-border-radius:45% 55% 0 0;
-animation:waveMove 18s ease-in-out infinite;
-z-index:0;
-opacity:1;
+border-radius:50% 50% 0 0;
+animation:waveMove 16s ease-in-out infinite;
+z-index:-5;
+opacity:.75;
 pointer-events:none;
 }
 
 .wave2{
-height:220px;
-opacity:.6;
-animation-duration:24s;
+width:170%;
+height:210px;
+left:-30%;
+bottom:-120px;
+opacity:.45;
+animation-duration:22s;
 animation-direction:reverse;
-bottom:15px;
 }
 
 .wave3{
+width:180%;
 height:180px;
-opacity:.4;
-animation-duration:30s;
-bottom:35px;
+left:-35%;
+bottom:-100px;
+opacity:.30;
+animation-duration:28s;
 }
 
 @keyframes waveMove{
@@ -636,11 +640,27 @@ transform:translateX(0);
 }
 
 50%{
-transform:translateX(-20%);
+transform:translateX(-8%);
 }
 
 100%{
-transform:translateX(-40%);
+transform:translateX(0);
 }
 
+}
+
+.dashboard,
+.topbar,
+.footer,
+.bottom-nav{
+
+position:relative;
+z-index:10;
+
+}
+
+.wave,
+.wave2,
+.wave3{
+will-change:transform;
 }
