@@ -2,75 +2,107 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Doctor Specialist Malaysia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloodChain Malaysia - Doctor Specialist</title>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-  margin: 0;
-  padding: 20px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 4px #000;
+body{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    padding:20px;
 }
 
-h2, h3 {
-  color: #333;
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
-.card {
-  background: white;
-  padding: 15px;
-  margin: 12px 0;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  border-left: 6px solid #4CAF50;
-  transition: 0.3s;
+.header{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-left: 6px solid #ff4081;
+.header h1{
+    color:#1565C0;
 }
 
-select, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
+.header p{
+    color:#666;
 }
 
-button {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-top:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-.lang {
-  font-size: 12px;
-  color: #666;
+th{
+    background:#1565C0;
+    color:white;
+    padding:12px;
 }
 
-hr {
-  margin: 20px 0;
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, #ff416c, #4CAF50, #2196F3);
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+button{
+    background:#2196F3;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0D47A1;
+}
+
+textarea{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    margin-top:10px;
+}
+
+#response{
+    margin-top:15px;
+    line-height:1.8;
+}
+
+.online{
+    color:green;
+    font-weight:bold;
+}
+
+.offline{
+    color:red;
+    font-weight:bold;
 }
 </style>
 
@@ -78,195 +110,286 @@ hr {
 
 <body>
 
-<h1>Doctor Specialist Malaysia / Doktor Pakar Malaysia / Specialist Doctors</h1>
+<div class="container">
 
-<!-- ===== DOCTOR LIST ===== -->
-
-<div class="card">
-<h3>1. Dr Safari Bin Elis</h3>
-<p>Cardiology - Penang</p>
+<div class="header">
+<h1>🏥 BloodChain Malaysia 2026</h1>
+<p>
+Indonesia | Bahasa Melayu | English
+</p>
 </div>
 
+<h2>🏥 Daftar Dokter Spesialis Malaysia</h2>
+
 <div class="card">
-<h3>2. Dr Chan Kok Kheng</h3>
-<p>Heart Specialist - Kuala Lumpur</p>
+
+<table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;text-align:center;">
+
+<tr style="background:#1976D2;color:white;">
+<th>No</th>
+<th>Nama Dokter</th>
+<th>Spesialis</th>
+<th>Negeri</th>
+<th>Konsultasi</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Dr. Paul Yap Ray Yee</td>
+<td>Penyakit Dalam (Gastroenterologi)</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Paul Yap Ray Yee')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Dr. Warren Lo Hwa Loon</td>
+<td>Urologi</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Warren Lo Hwa Loon')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Dr. Lim Heng Hing</td>
+<td>Ortopedi</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Lim Heng Hing')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Dr. Ooi Phaik Yee</td>
+<td>Neurologi</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Ooi Phaik Yee')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Dr. Chang Choong Chor</td>
+<td>Dermatologi</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Chang Choong Chor')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Dr. Doreen Lee Li Peng</td>
+<td>Bedah Umum</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Doreen Lee Li Peng')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Dr. Tham Yik Seng</td>
+<td>THT</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Dr. Tham Yik Seng')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Datuk Dr. Abd Aziz Yahya</td>
+<td>Obstetri &amp; Ginekologi</td>
+<td>Kuala Lumpur</td>
+<td><button onclick="selectDoctor('Datuk Dr. Abd Aziz Yahya')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Dr. Han Pei Kwong</td>
+<td>Urologi</td>
+<td>Johor</td>
+<td><button onclick="selectDoctor('Dr. Han Pei Kwong')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Dr. Ang Chin Yong</td>
+<td>Kardiologi</td>
+<td>Johor</td>
+<td><button onclick="selectDoctor('Dr. Ang Chin Yong')">💬 Konsultasi / Rundingan / Consultation</button></td>
+</tr>
+
+</table>
+
 </div>
 
-<div class="card">
-<h3>3. Dr Padmanathan Rajoo</h3>
-<p>General Surgeon - Johor</p>
-</div>
-
-<div class="card">
-<h3>4. Dr Mohd Shaiful Bahrun Hussain</h3>
-<p>Orthopedic - Selangor</p>
-</div>
-
-<div class="card">
-<h3>5. Dr Ewe Khay Guan</h3>
-<p>ENT - Perak</p>
-</div>
-
-<div class="card">
-<h3>6. Dr Long Wai Lup</h3>
-<p>Pediatric - Melaka</p>
-</div>
-
-<div class="card">
-<h3>7. Dr Lee Yu Chuang</h3>
-<p>Dermatology - Sabah</p>
-</div>
-
-<div class="card">
-<h3>8. Dr Asha Prerna</h3>
-<p>Neurology - Sarawak</p>
-</div>
-
-<div class="card">
-<h3>9. Dr Koay Han Siang</h3>
-<p>Gynecology - Kelantan</p>
-</div>
-
-<div class="card">
-<h3>10. Dr Naharuddin Bin Mohamad Saifi</h3>
-<p>Urology - Terengganu</p>
-</div>
-
-<hr>
-
-<!-- ===== CONSULTATION ===== -->
-
-<h2>💬 Consultation System</h2>
+<!-- ================= CONSULTATION ================= -->
 
 <div class="card">
 
-<select id="doctor">
-<option>Cardiologist</option>
-<option>Heart Specialist</option>
-<option>Surgeon</option>
-<option>Orthopedic</option>
-<option>ENT</option>
-<option>Pediatric</option>
-<option>Dermatologist</option>
-<option>Neurologist</option>
-<option>Gynecologist</option>
-<option>Urologist</option>
-</select>
+<h2>💬 Konsultasi Dokter / Rundingan Doktor / Doctor Consultation</h2>
+
+<p>
+<b>👨‍⚕️ Dokter Terpilih / Selected Doctor / Doktor Dipilih</b>
+</p>
+
+<input
+type="text"
+id="doctor"
+readonly
+placeholder="Silakan pilih dokter dari tabel di atas"
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;">
 
 <br><br>
 
-<textarea id="complaint" rows="4" style="width:100%;" placeholder="Tulis keluhan..."></textarea>
+<label>
+<b>🇮🇩 Keluhan Pasien</b><br>
+<b>🇲🇾 Aduan Pesakit</b><br>
+<b>🇬🇧 Patient Complaint</b>
+</label>
+
+<textarea
+id="complaint"
+rows="6"
+placeholder="Contoh:
+Saya mengalami demam, batuk dan sakit tenggorokan selama 3 hari..."></textarea>
 
 <br><br>
 
-<button onclick="replyDoctor()">Kirim</button>
+<button onclick="replyDoctor()">
+📨 Kirim Konsultasi
+</button>
 
 </div>
+
+<!-- ================= RESPONSE ================= -->
 
 <div class="card">
-<h3>Jawaban Dokter</h3>
-<p id="response">-</p>
+
+<h2>
+🩺 Jawaban Dokter /
+Jawapan Doktor /
+Doctor Response
+</h2>
+
+<div id="response">
+
+Silakan pilih dokter terlebih dahulu.
+
 </div>
 
-<hr>
+</div>
 
-<!-- ===== HISTORY ===== -->
+<!-- ================= HISTORY ================= -->
 
-<h3>📂 History Pasien</h3>
-<button onclick="showHistory()">Lihat History</button>
+<div class="card">
 
-<div class="card" id="historyBox">Belum ada data</div>
+<h2>
+📂 Riwayat Konsultasi /
+Sejarah Rundingan /
+Consultation History
+</h2>
+
+<button onclick="showHistory()">
+Lihat Riwayat
+</button>
+
+<div id="historyBox">
+
+Belum ada riwayat konsultasi.
+
+</div>
+
+</div>
 
 <script>
 
 let historyData = [];
 
-function replyDoctor() {
+function selectDoctor(name){
 
-let text = document.getElementById("complaint").value.toLowerCase();
-let doc = document.getElementById("doctor").value;
+    document.getElementById("doctor").value = name;
 
-let reply = "";
-let matchedDoctor = doc;
+    document.getElementById("response").innerHTML = `
+    <h3>👨‍⚕️ ${name}</h3>
 
-if(text.length < 5){
-reply = "Isi keluhan dulu.";
+    <p><b>🇮🇩 Indonesia</b><br>
+    Dokter telah dipilih. Silakan tuliskan keluhan Anda untuk mendapatkan informasi kesehatan awal.</p>
+
+    <p><b>🇲🇾 Bahasa Melayu</b><br>
+    Doktor telah dipilih. Sila tulis aduan anda untuk mendapatkan maklumat kesihatan awal.</p>
+
+    <p><b>🇬🇧 English</b><br>
+    The doctor has been selected. Please describe your symptoms to receive initial health information.</p>
+
+    <hr>
+
+    <small><b>Catatan:</b> Respons berikut adalah simulasi edukasi berbasis AI dan bukan diagnosis medis.</small>
+    `;
 }
 
-else if(text.includes("demam") || text.includes("fever")){
-matchedDoctor = "Pediatric Doctor";
-reply = ai("Demam", matchedDoctor);
-}
+function replyDoctor(){
 
-else if(text.includes("batuk")){
-matchedDoctor = "Cardiologist";
-reply = ai("Batuk", matchedDoctor);
-}
+    let doctor=document.getElementById("doctor").value;
+    let complaint=document.getElementById("complaint").value;
 
-else if(text.includes("jantung")){
-matchedDoctor = "Heart Specialist";
-reply = ai("Jantung", matchedDoctor);
-}
+    if(doctor==""){
+        alert("Silakan pilih dokter terlebih dahulu.");
+        return;
+    }
 
-else if(text.includes("perut")){
-matchedDoctor = "Surgeon";
-reply = ai("Perut", matchedDoctor);
-}
+    if(complaint.length<5){
+        alert("Silakan tuliskan keluhan pasien.");
+        return;
+    }
 
-else if(text.includes("kulit")){
-matchedDoctor = "Dermatologist";
-reply = ai("Kulit", matchedDoctor);
-}
+    let response=`
+    <h3>👨‍⚕️ ${doctor}</h3>
 
-else {
-reply = ai("Umum", matchedDoctor);
-}
+    <p><b>🇮🇩 Indonesia</b><br>
+    Terima kasih atas informasi yang Anda berikan. Berdasarkan keluhan tersebut, saya menyarankan Anda untuk beristirahat, menjaga asupan cairan, dan segera memeriksakan diri ke fasilitas kesehatan apabila gejala bertambah berat atau tidak membaik. Informasi ini hanya bersifat edukasi.</p>
 
-historyData.push({
-complaint: text,
-doctor: matchedDoctor
-});
+    <p><b>🇲🇾 Bahasa Melayu</b><br>
+    Terima kasih atas maklumat yang diberikan. Berdasarkan aduan anda, sila berehat, minum air secukupnya dan dapatkan pemeriksaan di hospital jika simptom berterusan atau menjadi lebih teruk. Maklumat ini hanya untuk tujuan pendidikan.</p>
 
-document.getElementById("response").innerHTML = reply;
-}
+    <p><b>🇬🇧 English</b><br>
+    Thank you for describing your symptoms. Based on the information provided, please rest, stay hydrated, and seek medical attention if your condition worsens or does not improve. This information is for educational purposes only.</p>
 
-function ai(disease, doctor){
+    <hr>
 
-return `
-🧠 AI Diagnosis<br><br>
+    <b>Keluhan:</b><br>
+    ${complaint}
+    `;
 
-ID: Disarankan istirahat dan konsultasi jika parah.<br>
-BM: Rehat dan dapatkan rawatan jika perlu.<br>
-EN: Rest and seek medical attention if needed.<br><br>
+    document.getElementById("response").innerHTML=response;
 
-📌 Disease: ${disease}<br>
-👨‍⚕️ Doctor: ${doctor}
-`;
+    historyData.push({
+        doctor:doctor,
+        complaint:complaint,
+        time:new Date().toLocaleString()
+    });
 
 }
 
 function showHistory(){
 
-let box = document.getElementById("historyBox");
+    let html="";
 
-if(historyData.length == 0){
-box.innerHTML = "Belum ada history.";
-return;
-}
+    if(historyData.length==0){
 
-let html = "";
+        html="Belum ada riwayat konsultasi.";
 
-for(let i=0;i<historyData.length;i++){
-html += `
-<p>
-<b>${i+1}</b><br>
-${historyData[i].complaint}<br>
-${historyData[i].doctor}
-</p><hr>
-`;
-}
+    }else{
 
-box.innerHTML = html;
+        historyData.forEach(function(item,index){
+
+            html+=`
+            <div style="padding:10px;border-bottom:1px solid #ddd;">
+            <b>${index+1}. ${item.doctor}</b><br>
+            ${item.complaint}<br>
+            <small>${item.time}</small>
+            </div>
+            `;
+
+        });
+
+    }
+
+    document.getElementById("historyBox").innerHTML=html;
 
 }
 
