@@ -597,70 +597,125 @@ transform:scale(.5);
 
 .wave{
 position:fixed;
-left:-25%;
-bottom:-140px;
-width:160%;
-height:240px;
+left:-15%;
+bottom:-70px;
+width:130%;
+height:170px;
+
 background:linear-gradient(
 180deg,
 rgba(0,180,255,.12),
 rgba(0,119,255,.45),
 rgba(0,80,200,.75)
 );
+
 border-radius:50% 50% 0 0;
-animation:waveMove 16s ease-in-out infinite;
-z-index:-5;
-opacity:.75;
+
+animation:waveMove 18s ease-in-out infinite;
+
 pointer-events:none;
+
+z-index:-5;
+
+opacity:.55;
+
+will-change:transform;
+
+transform:translate3d(0,0,0);
+
+backface-visibility:hidden;
+
+-webkit-backface-visibility:hidden;
 }
 
 .wave2{
-width:170%;
-height:210px;
-left:-30%;
-bottom:-120px;
-opacity:.45;
-animation-duration:22s;
+
+width:135%;
+
+height:150px;
+
+left:-18%;
+
+bottom:-55px;
+
+opacity:.35;
+
+animation-duration:24s;
+
 animation-direction:reverse;
+
 }
 
 .wave3{
-width:180%;
-height:180px;
-left:-35%;
-bottom:-100px;
-opacity:.30;
-animation-duration:28s;
+
+width:140%;
+
+height:130px;
+
+left:-20%;
+
+bottom:-40px;
+
+opacity:.22;
+
+animation-duration:30s;
+
 }
 
 @keyframes waveMove{
 
 0%{
-transform:translateX(0);
+
+transform:translate3d(0,0,0);
+
 }
 
 50%{
-transform:translateX(-8%);
+
+transform:translate3d(-5%,0,0);
+
 }
 
 100%{
-transform:translateX(0);
-}
+
+transform:translate3d(0,0,0);
 
 }
 
-.dashboard,
-.topbar,
-.footer,
-.bottom-nav{
+}
 
-position:relative;
-z-index:10;
+/* Optimasi khusus HP */
+
+@media (max-width:768px){
+
+.wave{
+
+width:120%;
+
+height:150px;
+
+left:-10%;
+
+bottom:-60px;
+
+opacity:.45;
 
 }
 
-.wave,
-.wave2,
+.wave2{
+
+height:130px;
+
+bottom:-50px;
+
+}
+
 .wave3{
-will-change:transform;
+
+height:110px;
+
+bottom:-40px;
+
+}
+
 }
