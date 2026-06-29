@@ -1,316 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Specialist Malaysia | BloodChain Malaysia 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Malaysia Specialist Doctor</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f2f6fb;
+margin:0;
+padding:0;
+}
 
-    <style>
-        body{
-            margin:0;
-            font-family:Arial,Helvetica,sans-serif;
-            background:#f5f5f5;
-        }
+header{
+background:#c62828;
+color:white;
+padding:18px;
+text-align:center;
+}
 
-        .header{
-            background:#b71c1c;
-            color:white;
-            padding:18px;
-            text-align:center;
-            font-size:22px;
-            font-weight:bold;
-        }
+.container{
+padding:15px;
+}
 
-        .container{
-            width:95%;
-            max-width:900px;
-            margin:auto;
-            padding:20px;
-        }
+.search{
+width:100%;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-bottom:20px;
+}
 
-        .search-box{
-            width:100%;
-            padding:12px;
-            border-radius:8px;
-            border:1px solid #ccc;
-            margin-bottom:20px;
-            font-size:16px;
-        }
+.card{
+background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
 
-        .doctor-card{
-            background:white;
-            border-radius:10px;
-            padding:18px;
-            margin-bottom:15px;
-            box-shadow:0 2px 8px rgba(0,0,0,.15);
-        }
+button{
+background:#d32f2f;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
+}
 
-        .doctor-name{
-            font-size:18px;
-            font-weight:bold;
-            color:#b71c1c;
-        }
+button:hover{
+background:#b71c1c;
+}
 
-        .doctor-specialist{
-            margin-top:6px;
-            color:#444;
-        }
-
-        .doctor-hospital{
-            margin-top:6px;
-            color:#666;
-        }
-
-        button{
-            margin-top:15px;
-            background:#b71c1c;
-            color:white;
-            border:none;
-            padding:10px 18px;
-            border-radius:6px;
-            cursor:pointer;
-        }
-
-        button:hover{
-            background:#8b0000;
-        }
-    </style>
+small{
+color:#666;
+}
+</style>
 
 </head>
 
 <body>
 
-<div class="header">
-🩺 Doctor Specialist Malaysia
-</div>
+<header>
+
+<h2>👨‍⚕️ Dokter Spesialis Malaysia</h2>
+
+<h3>👨‍⚕️ Doktor Pakar Malaysia</h3>
+
+<h3>👨‍⚕️ Malaysia Specialist Doctor</h3>
+
+</header>
 
 <div class="container">
 
-<input
-type="text"
-id="searchDoctor"
-class="search-box"
-placeholder="Search doctor or specialist..."
-onkeyup="searchDoctor()">
+<input class="search"
+placeholder="Cari Dokter | Cari Doktor | Search Doctor">
 
-<div class="doctor-card">
-    <div class="doctor-name">Datuk Dr. Shaiful Azmi Yahaya</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
-    <button onclick="consultDoctor('Datuk Dr. Shaiful Azmi Yahaya')">Consultation</button>
-</div>
+<h3>Daftar Dokter Spesialis</h3>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dato' Sri Dr. Azmee Mohd Ghazi</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
-    <button onclick="consultDoctor('Dato Sri Dr. Azmee Mohd Ghazi')">Consultation</button>
-</div>
+<div class="card">
 
-<div class="doctor-card">
-    <div class="doctor-name">Dato' Dr. Amin Ariff Nuruddin</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
-    <button onclick="consultDoctor('Dato Dr. Amin Ariff Nuruddin')">Consultation</button>
-</div>
+<h3>1.Assoc. Prof. Dato Dr. Nik Ritza Kosai Nik Mahmood</h3>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. David Quek</div>
-    <div class="doctor-specialist">Specialist: Internal Medicine & Cardiology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Kuala Lumpur</div>
-    <button onclick="consultDoctor('Dr. David Quek')">Consultation</button>
-</div>
+<p>
+Spesialis :
+Bedah Umum / General Surgery
+</p>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Jeremy Quah Wy Jin</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Jeremy Quah Wy Jin')">Consultation</button>
-</div>
+<p>
+Rumah Sakit :
+Gleneagles Hospital Kuala Lumpur
+</p>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Aaron Ong Hean Jin</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Aaron Ong Hean Jin')">Consultation</button>
-</div>
+<p>
+Negeri :
+Kuala Lumpur
+</p>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Lee Kuo Ting</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Lee Kuo Ting')">Consultation</button>
-</div>
+<p>
+Bahasa :
+Melayu • English
+</p>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Chang Sau Kong</div>
-    <div class="doctor-specialist">Specialist: Internal Medicine</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Chang Sau Kong')">Consultation</button>
-</div>
+<p>
+Status :
+🟢 Available
+</p>
 
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Patrick Tiau Wei Jyung</div>
-    <div class="doctor-specialist">Specialist: Cardiology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Patrick Tiau Wei Jyung')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Chin Mann Leon</div>
-    <div class="doctor-specialist">Specialist: Neurology</div>
-    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
-    <button onclick="consultDoctor('Dr. Chin Mann Leon')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Kantha Rao</div>
-    <div class="doctor-specialist">Specialist: Urology</div>
-    <div class="doctor-hospital">Hospital: KPJ Rawang Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Kantha Rao')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Prof. Dr. Christopher Ho</div>
-    <div class="doctor-specialist">Specialist: Urology</div>
-    <div class="doctor-hospital">Hospital: Oriental Melaka Straits Medical Centre</div>
-    <button onclick="consultDoctor('Prof. Dr. Christopher Ho')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Wong Chiew Chin</div>
-    <div class="doctor-specialist">Specialist: Orthopaedic Surgery</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Wong Chiew Chin')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Abdul Muin Ishak</div>
-    <div class="doctor-specialist">Specialist: Neurosurgery</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Abdul Muin Ishak')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Kim Yen Goh</div>
-    <div class="doctor-specialist">Specialist: Clinical Haematology & General Medicine</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Kim Yen Goh')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Mohd Nazri Jama'an</div>
-    <div class="doctor-specialist">Specialist: Urology</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Mohd Nazri Jama&#39;an')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Zaki Morad Mohamad Zaher</div>
-    <div class="doctor-specialist">Specialist: Nephrology</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Zaki Morad Mohamad Zaher')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Philip N. Jeremiah</div>
-    <div class="doctor-specialist">Specialist: Nephrology</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Philip N. Jeremiah')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Mazlam Mohd Zawawi</div>
-    <div class="doctor-specialist">Specialist: Gastroenterology & Hepatology</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Mazlam Mohd Zawawi')">Consultation</button>
-</div>
-
-<div class="doctor-card">
-    <div class="doctor-name">Dr. Sharifah Sakinah Syed Othman</div>
-    <div class="doctor-specialist">Specialist: Endocrinology</div>
-    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
-    <button onclick="consultDoctor('Dr. Sharifah Sakinah Syed Othman')">Consultation</button>
-</div>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
 
 </div>
 
-<script>
+<div class="card">
+<h3>2. Dr. Hoe Chee Hoong</h3>
+<p>Spesialis : Penyakit Dalam (Gastroenterologi & Hepatologi)</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-function searchDoctor(){
+<div class="card">
+<h3>3. Dr. Gan Hwa Wooi</h3>
+<p>Spesialis : Kardiologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    let input=document.getElementById("searchDoctor").value.toUpperCase();
+<div class="card">
+<h3>4. Dr. Khoo Eng Hooi</h3>
+<p>Spesialis : Ortopedi (Bedah Tulang Belakang)</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    let card=document.getElementsByClassName("doctor-card");
+<div class="card">
+<h3>5. Dr. Ooi Chong Chien</h3>
+<p>Spesialis : Urologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    for(let i=0;i<card.length;i++){
+<div class="card">
+<h3>6. Dr. Pua Kin Choo</h3>
+<p>Spesialis : THT</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        let text=card[i].innerText.toUpperCase();
+<div class="card">
+<h3>7. Dr. Suresh Kumarasamy</h3>
+<p>Spesialis : Obstetri & Ginekologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        if(text.indexOf(input)>-1){
+<div class="card">
+<h3>8. Dato' Dr. Chen Tse Peng</h3>
+<p>Spesialis : Nefrologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-            card[i].style.display="block";
+<div class="card">
+<h3>9. Dr. Simon Lo</h3>
+<p>Spesialis : Kardiologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        }else{
+<div class="card">
+<h3>10. Dr. Chan Kok Yu</h3>
+<p>Spesialis : Ortopedi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-            card[i].style.display="none";
+<div class="card">
+<h3>11. Dr. Tan Bee Eng</h3>
+<p>Spesialis : Reumatologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        }
+<div class="card">
+<h3>12. Dr. Goh Heong Keong</h3>
+<p>Spesialis : Nefrologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }
+<div class="card">
+<h3>13. Prof. Dr. Amir S. Khir</h3>
+<p>Spesialis : Endokrinologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-}
+<div class="card">
+<h3>14. Dr. Lim Shueh Lin</h3>
+<p>Spesialis : Endokrinologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-function consultDoctor(name){
+<div class="card">
+<h3>15. Dr. Sim Bee Fung</h3>
+<p>Spesialis : Neurologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    let symptom=prompt(
-"Doctor : "+name+
-"\n\nPlease write your symptoms:");
+<div class="card">
+<h3>16. Dr. Sathindren Santhirathelagan</h3>
+<p>Spesialis : Neurologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    if(symptom==null||symptom==""){
+<div class="card">
+<h3>17. Dato' Dr. Lai Yoon Kee</h3>
+<p>Spesialis : Oftalmologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        return;
+<div class="card">
+<h3>18. Dr. Jonathan Choon Siew Cheong</h3>
+<p>Spesialis : Oftalmologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }
+<div class="card">
+<h3>19. Dr. Vivian Gong Hee Ming</h3>
+<p>Spesialis : Oftalmologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    let answer="";
+<div class="card">
+<h3>20. Dr. P. Srinivas</h3>
+<p>Spesialis : Pulmonologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    symptom=symptom.toLowerCase();
+<div class="card">
+<h3>21. Dr. Ong Choo Khoon</h3>
+<p>Spesialis : Pulmonologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    if(symptom.includes("fever")||symptom.includes("demam")){
+<div class="card">
+<h3>22. Dato' Dr. Adel Zaatar</h3>
+<p>Spesialis : Onkologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        answer="Possible viral or bacterial infection. Drink enough water, rest, and if the fever lasts more than 3 days, visit the nearest hospital immediately.";
+<div class="card">
+<h3>23. Dr. Lee Wei Ching</h3>
+<p>Spesialis : Onkologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }else if(symptom.includes("cough")||symptom.includes("batuk")){
+<div class="card">
+<h3>24. Dr. Leong Kin Wah</h3>
+<p>Spesialis : Hematologi</p>
+<p>Rumah Sakit : Gleneagles Hospital Penang</p>
+<p>Negeri : Pulau Pinang</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
+<div class="card">
+<h3>25. Dr. Abraham Mathew George</h3>
+<p>Spesialis : Penyakit Dalam (Gastroenterologi & Hepatologi)</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        answer="Your cough may be caused by a respiratory infection or allergy. If it lasts more than two weeks, consult a specialist.";
+<div class="card">
+<h3>26. Dr. Azida Zainal Anuar</h3>
+<p>Spesialis : THT (ENT)</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }else if(symptom.includes("headache")||symptom.includes("sakit kepala")){
+<div class="card">
+<h3>27. Dr. Tan Kok Keong</h3>
+<p>Spesialis : Ortopedi</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        answer="Headaches can have many causes, such as stress, dehydration, or high blood pressure. If severe or persistent, seek medical care.";
+<div class="card">
+<h3>28. Dr. Bea Kia Chuang</h3>
+<p>Spesialis : Ortopedi</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }else if(symptom.includes("stomach")||symptom.includes("perut")){
+<div class="card">
+<h3>29. Dr. Mohamed Asri bin Halili</h3>
+<p>Spesialis : Oftalmologi (Mata)</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-        answer="Stomach pain may be related to gastritis, digestive disorders, or infection. If the pain is severe, seek immediate medical attention.";
+<div class="card">
+<h3>30. Dr. Diong Kok Hui</h3>
+<p>Spesialis : Penyakit Dalam</p>
+<p>Rumah Sakit : KPJ Johor Specialist Hospital</p>
+<p>Negeri : Johor</p>
+<p>Status : 🟢 Available</p>
+<button>Konsultasi | Konsultasi Doktor | Consultation</button>
+</div>
 
-    }else{
+</div>
 
-        answer="Thank you for your consultation. Your symptoms require further evaluation by a specialist. Please visit the nearest hospital for a proper diagnosis.";
-    }
-
-    alert(
-"Doctor : "+name+
-"\n\nSymptoms : "+symptom+
-"\n\nRecommendation :\n\n"+answer+
-"\n\n-------------------------------------------------\nThis information is for educational purposes only and is NOT a medical diagnosis.");
-
-}
-
-</script>
+<footer style="text-align:center;padding:20px;background:#c62828;color:white;margin-top:20px;">
+BloodChain Malaysia 2026 © 2026
+<br>
+Dokter Spesialis Malaysia | Doktor Pakar Malaysia | Malaysia Specialist Doctor
+</footer>
 
 </body>
-
 </html>
-
