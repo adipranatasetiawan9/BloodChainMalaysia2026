@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Specialist Malaysia | BloodChain Malaysia 2026</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,Helvetica,sans-serif;
+            background:#f5f5f5;
+        }
+
+        .header{
+            background:#b71c1c;
+            color:white;
+            padding:18px;
+            text-align:center;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .container{
+            width:95%;
+            max-width:900px;
+            margin:auto;
+            padding:20px;
+        }
+
+        .search-box{
+            width:100%;
+            padding:12px;
+            border-radius:8px;
+            border:1px solid #ccc;
+            margin-bottom:20px;
+            font-size:16px;
+        }
+
+        .doctor-card{
+            background:white;
+            border-radius:10px;
+            padding:18px;
+            margin-bottom:15px;
+            box-shadow:0 2px 8px rgba(0,0,0,.15);
+        }
+
+        .doctor-name{
+            font-size:18px;
+            font-weight:bold;
+            color:#b71c1c;
+        }
+
+        .doctor-specialist{
+            margin-top:6px;
+            color:#444;
+        }
+
+        .doctor-hospital{
+            margin-top:6px;
+            color:#666;
+        }
+
+        button{
+            margin-top:15px;
+            background:#b71c1c;
+            color:white;
+            border:none;
+            padding:10px 18px;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#8b0000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+🩺 Doctor Specialist Malaysia
+</div>
+
+<div class="container">
+
+<input
+type="text"
+id="searchDoctor"
+class="search-box"
+placeholder="Search doctor or specialist..."
+onkeyup="searchDoctor()">
+
+<div class="doctor-card">
+    <div class="doctor-name">Datuk Dr. Shaiful Azmi Yahaya</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
+    <button onclick="consultDoctor('Datuk Dr. Shaiful Azmi Yahaya')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dato' Sri Dr. Azmee Mohd Ghazi</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
+    <button onclick="consultDoctor('Dato Sri Dr. Azmee Mohd Ghazi')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dato' Dr. Amin Ariff Nuruddin</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Institut Jantung Negara (IJN), Kuala Lumpur</div>
+    <button onclick="consultDoctor('Dato Dr. Amin Ariff Nuruddin')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. David Quek</div>
+    <div class="doctor-specialist">Specialist: Internal Medicine & Cardiology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Kuala Lumpur</div>
+    <button onclick="consultDoctor('Dr. David Quek')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Jeremy Quah Wy Jin</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Jeremy Quah Wy Jin')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Aaron Ong Hean Jin</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Aaron Ong Hean Jin')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Lee Kuo Ting</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Lee Kuo Ting')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Chang Sau Kong</div>
+    <div class="doctor-specialist">Specialist: Internal Medicine</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Chang Sau Kong')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Patrick Tiau Wei Jyung</div>
+    <div class="doctor-specialist">Specialist: Cardiology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Patrick Tiau Wei Jyung')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Chin Mann Leon</div>
+    <div class="doctor-specialist">Specialist: Neurology</div>
+    <div class="doctor-hospital">Hospital: Pantai Hospital Ayer Keroh</div>
+    <button onclick="consultDoctor('Dr. Chin Mann Leon')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Kantha Rao</div>
+    <div class="doctor-specialist">Specialist: Urology</div>
+    <div class="doctor-hospital">Hospital: KPJ Rawang Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Kantha Rao')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Prof. Dr. Christopher Ho</div>
+    <div class="doctor-specialist">Specialist: Urology</div>
+    <div class="doctor-hospital">Hospital: Oriental Melaka Straits Medical Centre</div>
+    <button onclick="consultDoctor('Prof. Dr. Christopher Ho')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Wong Chiew Chin</div>
+    <div class="doctor-specialist">Specialist: Orthopaedic Surgery</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Wong Chiew Chin')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Abdul Muin Ishak</div>
+    <div class="doctor-specialist">Specialist: Neurosurgery</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Abdul Muin Ishak')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Kim Yen Goh</div>
+    <div class="doctor-specialist">Specialist: Clinical Haematology & General Medicine</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Kim Yen Goh')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Mohd Nazri Jama'an</div>
+    <div class="doctor-specialist">Specialist: Urology</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Mohd Nazri Jama&#39;an')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Zaki Morad Mohamad Zaher</div>
+    <div class="doctor-specialist">Specialist: Nephrology</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Zaki Morad Mohamad Zaher')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Philip N. Jeremiah</div>
+    <div class="doctor-specialist">Specialist: Nephrology</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Philip N. Jeremiah')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Mazlam Mohd Zawawi</div>
+    <div class="doctor-specialist">Specialist: Gastroenterology & Hepatology</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Mazlam Mohd Zawawi')">Consultation</button>
+</div>
+
+<div class="doctor-card">
+    <div class="doctor-name">Dr. Sharifah Sakinah Syed Othman</div>
+    <div class="doctor-specialist">Specialist: Endocrinology</div>
+    <div class="doctor-hospital">Hospital: KPJ Ampang Puteri Specialist Hospital</div>
+    <button onclick="consultDoctor('Dr. Sharifah Sakinah Syed Othman')">Consultation</button>
+</div>
+
+</div>
+
+<script>
+
+function searchDoctor(){
+
+    let input=document.getElementById("searchDoctor").value.toUpperCase();
+
+    let card=document.getElementsByClassName("doctor-card");
+
+    for(let i=0;i<card.length;i++){
+
+        let text=card[i].innerText.toUpperCase();
+
+        if(text.indexOf(input)>-1){
+
+            card[i].style.display="block";
+
+        }else{
+
+            card[i].style.display="none";
+
+        }
+
+    }
+
+}
+
+function consultDoctor(name){
+
+    let symptom=prompt(
+"Doctor : "+name+
+"\n\nPlease write your symptoms:");
+
+    if(symptom==null||symptom==""){
+
+        return;
+
+    }
+
+    let answer="";
+
+    symptom=symptom.toLowerCase();
+
+    if(symptom.includes("fever")||symptom.includes("demam")){
+
+        answer="Possible viral or bacterial infection. Drink enough water, rest, and if the fever lasts more than 3 days, visit the nearest hospital immediately.";
+
+    }else if(symptom.includes("cough")||symptom.includes("batuk")){
+
+        answer="Your cough may be caused by a respiratory infection or allergy. If it lasts more than two weeks, consult a specialist.";
+
+    }else if(symptom.includes("headache")||symptom.includes("sakit kepala")){
+
+        answer="Headaches can have many causes, such as stress, dehydration, or high blood pressure. If severe or persistent, seek medical care.";
+
+    }else if(symptom.includes("stomach")||symptom.includes("perut")){
+
+        answer="Stomach pain may be related to gastritis, digestive disorders, or infection. If the pain is severe, seek immediate medical attention.";
+
+    }else{
+
+        answer="Thank you for your consultation. Your symptoms require further evaluation by a specialist. Please visit the nearest hospital for a proper diagnosis.";
+    }
+
+    alert(
+"Doctor : "+name+
+"\n\nSymptoms : "+symptom+
+"\n\nRecommendation :\n\n"+answer+
+"\n\n-------------------------------------------------\nThis information is for educational purposes only and is NOT a medical diagnosis.");
+
+}
+
+</script>
+
+</body>
+
+</html>
+
