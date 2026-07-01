@@ -2,41 +2,30 @@
 <html lang="id">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodChain Malaysia 2026</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BloodChain Malaysia 2026</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- Topbar -->
 <div class="topbar">
 
     <div>
-
         <h2>🩸 BloodChain</h2>
-
         <small>Malaysia 2026</small>
-
     </div>
 
     <div class="admin" onclick="toggleAdminMenu()">
-
-        👤 <span>Admin</span>
+        👤 Admin
 
         <div id="adminMenu" class="admin-menu">
 
-            <a href="profile.html">👤 Profil</a>
-
-            <a href="setting.html">⚙️ Pengaturan</a>
-
-            <a href="login.html">🚪 Logout</a>
+            <a href="profile.html">Profil</a>
+            <a href="setting.html">Pengaturan</a>
+            <a href="login.html">Logout</a>
 
         </div>
 
@@ -44,34 +33,21 @@
 
 </div>
 
-<!-- Dashboard -->
 <div class="dashboard">
 
 <h2>Dashboard Administrator</h2>
 
-<div class="cards">
-
-    <div class="card">
-        <h3>Total Pendonor</h3>
-        <h1 id="totalPendonor">0</h1>
-    </div>
-
-    <div class="card">
-        <h3>Rumah Sakit</h3>
-        <h1 id="totalRumahSakit">0</h1>
-    </div>
-
-    <div class="card">
-        <h3>Stok Darah</h3>
-        <h1 id="totalStok">0</h1>
-    </div>
-
-    <div class="card">
-        <h3>Blockchain</h3>
-        <h1 id="totalBlockchain">0</h1>
-    </div>
+<!-- Isi Dashboard akan kita lanjutkan pada tahap berikutnya -->
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+<!-- JAM DIGITAL -->
 
 <div class="statistik">
 
@@ -82,40 +58,42 @@
     </div>
 
     <div id="digitalDate" class="digital-date">
-        Rabu, 1 Juli 2026
+        Senin, 1 Januari 2026
     </div>
 
 </div>
+
+<!-- GRAFIK STATISTIK -->
 
 <div class="statistik">
 
     <h2>📊 Grafik Statistik BloodChain</h2>
 
-    <canvas id="chartBlood"></canvas>
-
-<div style="height:220px;">
-<canvas id="chartBlood"></canvas>
-</div>
+    <div style="height:220px;">
+        <canvas id="chartBlood"></canvas>
+    </div>
 
 </div>
+
+<!-- DIAGRAM GOLONGAN DARAH -->
 
 <div class="statistik">
 
     <h2>🩸 Diagram Golongan Darah</h2>
 
-    <canvas id="bloodPie"></canvas>
-
-<div style="height:220px;">
-<canvas id="bloodPie"></canvas>
-</div>
+    <div style="height:220px;">
+        <canvas id="bloodPie"></canvas>
+    </div>
 
 </div>
+
+<!-- FLOW BLOCKCHAIN -->
 
 <div class="statistik">
 
-    <h2>⛓ Diagram Flow Blockchain</h2>
+<h2>⛓ Diagram Flow Blockchain</h2>
 
-    <div class="blockchain-flow">
+<div class="blockchain-flow">
 
 <div class="flow-box">
 🩸<br>
@@ -123,7 +101,7 @@ Pendonor
 <br><small>100%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 💉<br>
@@ -131,7 +109,7 @@ Pengambilan
 <br><small>98%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 🧪<br>
@@ -139,7 +117,7 @@ Laboratorium
 <br><small>96%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 ⛓<br>
@@ -147,7 +125,7 @@ Blockchain
 <br><small>100%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 🏦<br>
@@ -155,7 +133,7 @@ Bank Darah
 <br><small>94%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 🏥<br>
@@ -163,7 +141,7 @@ Rumah Sakit
 <br><small>92%</small>
 </div>
 
-<div class="arrow">➡</div>
+<div class="arrow">⬇</div>
 
 <div class="flow-box">
 ❤️<br>
@@ -175,44 +153,50 @@ Pasien
 
 </div>
 
-<div class="statistik">
-
-    <h2>📡 Status Sistem</h2>
-
-    <div class="system-status">
-
-        <div class="status-item">
-            <span>Blockchain</span>
-            <span id="statusBlockchain">🟢 Online</span>
-        </div>
-
-        <div class="status-item">
-            <span>Database</span>
-            <span id="statusDatabase">🟢 Connected</span>
-        </div>
-
-        <div class="status-item">
-            <span>Last Update</span>
-            <span id="lastUpdate">-</span>
-        </div>
-
-    </div>
-
-</div>
+<!-- STATUS SISTEM -->
 
 <div class="statistik">
 
-    <h2>🩸 Persentase Ketersediaan Stok Darah</h2>
+<h2>📡 Status Sistem</h2>
 
-    <div class="progress-container">
+<div class="system-status">
 
-        <div id="stokProgress" class="progress-bar">
-            0%
-        </div>
+<div class="status-item">
+<span>Blockchain</span>
+<span id="statusBlockchain">🟢 Online</span>
+</div>
 
-    </div>
+<div class="status-item">
+<span>Database</span>
+<span id="statusDatabase">🟢 Connected</span>
+</div>
+
+<div class="status-item">
+<span>Last Update</span>
+<span id="lastUpdate">-</span>
+</div>
 
 </div>
+
+</div>
+
+<!-- PROGRESS BAR -->
+
+<div class="statistik">
+
+<h2>🩸 Persentase Ketersediaan Stok Darah</h2>
+
+<div class="progress-container">
+
+<div id="stokProgress" class="progress-bar">
+0%
+</div>
+
+</div>
+
+</div>
+
+<!-- RINGKASAN DASHBOARD -->
 
 <div class="statistik">
 
@@ -244,6 +228,8 @@ Pasien
 
 </div>
 
+<!-- MENU UTAMA -->
+
 <h3 class="judul-menu">Menu Utama</h3>
 
 <a href="donor.html" class="menu-item">🩸 Data Pendonor <span>›</span></a>
@@ -266,11 +252,11 @@ Pasien
 
 <a href="history.html" class="menu-item">📜 Riwayat <span>›</span></a>
 
-<a href="about.html" class="menu-item">
-ℹ Tentang <span>›</span>
-</a>
+<a href="about.html" class="menu-item">ℹ️ Tentang <span>›</span></a>
 
 </div>
+
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -281,13 +267,13 @@ Pasien
 <p>Version 6.0</p>
 
 <p class="creator">
-
 Developed by
 <b>Mas Raden Adi Pranata Setiawan</b>
-
 </p>
 
 </footer>
+
+<!-- BOTTOM NAVIGATION -->
 
 <div class="bottom-nav">
 
@@ -309,3 +295,4 @@ Developed by
 
 </body>
 </html>
+
