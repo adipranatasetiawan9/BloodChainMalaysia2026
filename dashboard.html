@@ -1,463 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard BloodChain Malaysia 2026</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BloodChain Malaysia 2026</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- Background -->
 <div class="wave"></div>
 <div class="wave wave2"></div>
 <div class="wave wave3"></div>
 
+<!-- Topbar -->
 <div class="topbar">
 
     <div>
+
         <h2>🩸 BloodChain</h2>
+
         <small>Malaysia 2026</small>
+
     </div>
 
     <div class="admin" onclick="toggleAdminMenu()">
+
         👤 <span>Admin</span>
 
         <div id="adminMenu" class="admin-menu">
+
             <a href="profile.html">👤 Profil</a>
+
             <a href="setting.html">⚙️ Pengaturan</a>
+
             <a href="login.html">🚪 Logout</a>
+
         </div>
 
     </div>
 
 </div>
+
+<!-- Dashboard -->
+<div class="dashboard">
+
+<h2>Dashboard Administrator</h2>
 
 <div class="dashboard">
 
-    <h2>Dashboard Administrator</h2>
+<h2>Dashboard Administrator</h2>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card">
-            <h3>Total Pendonor</h3>
-            <h1 id="totalPendonor">0</h1>
-        </div>
-
-        <div class="card">
-            <h3>Rumah Sakit</h3>
-            <h1 id="totalRumahSakit">0</h1>
-        </div>
-
-        <div class="card">
-            <h3>Stok Darah</h3>
-            <h1 id="totalStok">0</h1>
-        </div>
-
-        <div class="card">
-            <h3>Blockchain</h3>
-            <h1 id="totalBlockchain">0</h1>
-        </div>
-
+    <div class="card">
+        <h3>Total Pendonor</h3>
+        <h1 id="totalPendonor">0</h1>
     </div>
 
-    <div class="statistik">
-
-        <h2>🕒 Jam Digital Malaysia</h2>
-
-        <div id="digitalClock" class="digital-clock">
-            00:00:00
-        </div>
-
-        <div id="digitalDate" class="digital-date">
-            Rabu, 1 Juli 2026
-        </div>
-
+    <div class="card">
+        <h3>Rumah Sakit</h3>
+        <h1 id="totalRumahSakit">0</h1>
     </div>
 
-    <div class="statistik">
-
-        <h2>📊 Grafik Statistik BloodChain</h2>
-
-        <canvas id="chartBlood"></canvas>
-
+    <div class="card">
+        <h3>Stok Darah</h3>
+        <h1 id="totalStok">0</h1>
     </div>
 
-    <div class="statistik">
-
-        <h2>🩸 Diagram Golongan Darah</h2>
-
-        <canvas id="bloodPie"></canvas>
-
+    <div class="card">
+        <h3>Blockchain</h3>
+        <h1 id="totalBlockchain">0</h1>
     </div>
-
-    <h3 class="judul-menu">Menu Utama</h3>
-
-    <a href="donor.html" class="menu-item">🩸 Data Pendonor <span>›</span></a>
-    <a href="hospital.html" class="menu-item">🏥 Rumah Sakit <span>›</span></a>
-    <a href="stock.html" class="menu-item">💉 Stok Darah <span>›</span></a>
-    <a href="request.html" class="menu-item">📦 Permintaan Darah <span>›</span></a>
-    <a href="doctor.html" class="menu-item">👨‍⚕️ Dokter Spesialis Malaysia <span>›</span></a>
-    <a href="bmi.html" class="menu-item">⚖️ BMI Calculator <span>›</span></a>
-    <a href="blockchain.html" class="menu-item">⛓ Blockchain <span>›</span></a>
-    <a href="supplychain.html" class="menu-item">🚚 Supply Chain <span>›</span></a>
-    <a href="qrcode.html" class="menu-item">📱 Scan QR Code <span>›</span></a>
-    <a href="history.html" class="menu-item">📜 Riwayat <span>›</span></a>
-    <a href="about.html" class="menu-item">ℹ Tentang <span>›</span></a>
 
 </div>
 
-<footer class="footer">
+<div class="statistik">
 
-    <p>BloodChain Malaysia v6.0</p>
+    <h2>🕒 Jam Digital Malaysia</h2>
 
-    <p>Digital Supply Chain Transfusi Darah Berbasis Blockchain</p>
+    <div id="digitalClock" class="digital-clock">
+        00:00:00
+    </div>
 
-    <p>Version 6.0</p>
-
-    <p class="creator">
-        Developed by <b>Mas Raden Adi Pranata Setiawan</b>
-    </p>
-
-</footer>
-
-<div class="bottom-nav">
-
-    <a href="dashboard.html">🏠<br>Home</a>
-    <a href="donor.html">🩸<br>Donor</a>
-    <a href="stock.html">💉<br>Stok</a>
-    <a href="blockchain.html">⛓<br>Block</a>
-    <a href="#">☰<br>Menu</a>
+    <div id="digitalDate" class="digital-date">
+        Rabu, 1 Juli 2026
+    </div>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/script.js"></script>
+<div class="statistik">
 
-</body>
-</html>
+    <h2>📊 Grafik Statistik BloodChain</h2>
 
-// ===============================
-// BloodChain Malaysia 2026
-// Dashboard Script
-// ===============================
+    <canvas id="chartBlood"></canvas>
 
-// Variabel Global
-let chart = null;
-let pieChart = null;
+</div>
 
-// ===============================
-// Animasi Angka Dashboard
-// ===============================
-function animasiAngka(id, tujuan){
+<div class="statistik">
 
-    const elemen = document.getElementById(id);
+    <h2>🩸 Diagram Golongan Darah</h2>
 
-    if(!elemen) return;
+    <canvas id="bloodPie"></canvas>
 
-    let angka = 0;
-
-    const kecepatan = Math.max(1, Math.ceil(tujuan / 40));
-
-    const interval = setInterval(function(){
-
-        angka += kecepatan;
-
-        if(angka >= tujuan){
-
-            angka = tujuan;
-
-            clearInterval(interval);
-
-        }
-
-        elemen.textContent = angka;
-
-    },30);
-
-}
-
-// ===============================
-// Jam Digital
-// ===============================
-function updateClock(){
-
-    const now = new Date();
-
-    const jam = document.getElementById("digitalClock");
-
-    const tanggal = document.getElementById("digitalDate");
-
-    if(jam){
-
-        jam.textContent = now.toLocaleTimeString("id-ID");
-
-    }
-
-    if(tanggal){
-
-        tanggal.textContent = now.toLocaleDateString("id-ID",{
-
-            weekday:"long",
-            day:"numeric",
-            month:"long",
-            year:"numeric"
-
-        });
-
-    }
-
-}
-
-// ===============================
-// Dashboard
-// ===============================
-function updateDashboard(){
-
-    const pendonor =
-    JSON.parse(localStorage.getItem("pendonor")) || [];
-
-    const rumahsakit =
-    JSON.parse(localStorage.getItem("rumahsakit")) || [];
-
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
-
-    const blockchain =
-    JSON.parse(localStorage.getItem("blockchain")) || [];
-
-    let totalStok = 0;
-
-    stok.forEach(function(item){
-
-        totalStok += Number(item.jumlah) || 0;
-
-    });
-
-    animasiAngka("totalPendonor", pendonor.length);
-
-    animasiAngka("totalRumahSakit", rumahsakit.length);
-
-    animasiAngka("totalStok", totalStok);
-
-    animasiAngka("totalBlockchain", blockchain.length);
-
-}
-
-// ===============================
-// Menu Admin
-// ===============================
-function toggleAdminMenu(){
-
-    document
-    .querySelector(".admin")
-    .classList
-    .toggle("active");
-
-}
-
-// Tutup menu jika klik di luar
-window.onclick = function(e){
-
-    if(!e.target.closest(".admin")){
-
-        document
-        .querySelector(".admin")
-        .classList
-        .remove("active");
-
-    }
-
-};
-
-// ===============================
-// Jalankan Saat Halaman Dibuka
-// ===============================
-
-updateDashboard();
-
-updateClock();
-
-updateChart();
-
-updatePieChart();
-
-updateStatus();
-
-updateProgress();
-
-updateSummary();
-
-checkLowStock();
-
-setInterval(updateClock,1000);
-
-setInterval(updateStatus,1000);
-
-window.addEventListener("storage",function(){
-
-    updateDashboard();
-
-    updateChart();
-
-    updatePieChart();
-
-    updateProgress();
-
-    updateSummary();
-
-});
-
-// ===============================
-// Grafik Statistik BloodChain
-// ===============================
-
-function updateChart(){
-
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
-
-    const label = [];
-    const data = [];
-
-    stok.forEach(function(item){
-
-        label.push(item.golongan);
-
-        data.push(Number(item.jumlah) || 0);
-
-    });
-
-    const canvas = document.getElementById("chartBlood");
-
-    if(!canvas) return;
-
-    if(chart){
-
-        chart.destroy();
-
-    }
-
-    chart = new Chart(canvas,{
-
-        type:"bar",
-
-        data:{
-
-            labels:label,
-
-            datasets:[{
-
-                label:"Jumlah Stok Darah",
-
-                data:data,
-
-                borderWidth:1
-
-            }]
-
-        },
-
-        options:{
-
-            responsive:true,
-
-            maintainAspectRatio:false,
-
-            scales:{
-
-                y:{
-
-                    beginAtZero:true
-
-                }
-
-            }
-
-        }
-
-    });
-
-}
-
-// ===============================
-// Diagram Pie Golongan Darah
-// ===============================
-
-function updatePieChart(){
-
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
-
-    let A = 0;
-    let B = 0;
-    let AB = 0;
-    let O = 0;
-
-    stok.forEach(function(item){
-
-        const jumlah = Number(item.jumlah) || 0;
-
-        switch(item.golongan){
-
-            case "A":
-                A += jumlah;
-                break;
-
-            case "B":
-                B += jumlah;
-                break;
-
-            case "AB":
-                AB += jumlah;
-                break;
-
-            case "O":
-                O += jumlah;
-                break;
-
-        }
-
-    });
-
-    const canvas = document.getElementById("bloodPie");
-
-    if(!canvas) return;
-
-    if(pieChart){
-
-        pieChart.destroy();
-
-    }
-
-    pieChart = new Chart(canvas,{
-
-        type:"pie",
-
-        data:{
-
-            labels:["A","B","AB","O"],
-
-            datasets:[{
-
-                data:[A,B,AB,O]
-
-            }]
-
-        },
-
-        options:{
-
-            responsive:true,
-
-            maintainAspectRatio:false
-
-        }
-
-    });
-
-}
+</div>
 
 <div class="statistik">
 
@@ -503,12 +156,12 @@ function updatePieChart(){
 
         <div class="status-item">
             <span>Blockchain</span>
-            <span id="statusBlockchain" class="online">🟢 Online</span>
+            <span id="statusBlockchain">🟢 Online</span>
         </div>
 
         <div class="status-item">
             <span>Database</span>
-            <span id="statusDatabase" class="online">🟢 Connected</span>
+            <span id="statusDatabase">🟢 Connected</span>
         </div>
 
         <div class="status-item">
@@ -533,66 +186,6 @@ function updatePieChart(){
     </div>
 
 </div>
-
-// ===============================
-// Status Dashboard
-// ===============================
-
-function updateStatus(){
-
-    const waktu = new Date();
-
-    const lastUpdate =
-    document.getElementById("lastUpdate");
-
-    if(lastUpdate){
-
-        lastUpdate.textContent =
-        waktu.toLocaleString("id-ID");
-
-    }
-
-}
-
-// ===============================
-// Progress Bar
-// ===============================
-
-function updateProgress(){
-
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
-
-    let total = 0;
-
-    stok.forEach(function(item){
-
-        total += Number(item.jumlah) || 0;
-
-    });
-
-    const maksimum = 100;
-
-    let persen = Math.round((total/maksimum)*100);
-
-    if(persen>100){
-
-        persen=100;
-
-    }
-
-    const bar =
-    document.getElementById("stokProgress");
-
-    if(bar){
-
-        bar.style.width = persen+"%";
-
-        bar.textContent = persen+"%";
-
-    }
-
-}
 
 <div class="statistik">
 
@@ -624,76 +217,66 @@ function updateProgress(){
 
 </div>
 
-// ===============================
-// Notifikasi Stok Darah
-// ===============================
+<h3 class="judul-menu">Menu Utama</h3>
 
-function checkLowStock(){
+<a href="donor.html" class="menu-item">🩸 Data Pendonor <span>›</span></a>
 
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
+<a href="hospital.html" class="menu-item">🏥 Rumah Sakit <span>›</span></a>
 
-    let total = 0;
+<a href="stock.html" class="menu-item">💉 Stok Darah <span>›</span></a>
 
-    stok.forEach(function(item){
+<a href="request.html" class="menu-item">📦 Permintaan Darah <span>›</span></a>
 
-        total += Number(item.jumlah) || 0;
+<a href="doctor.html" class="menu-item">👨‍⚕️ Dokter Spesialis Malaysia <span>›</span></a>
 
-    });
+<a href="bmi.html" class="menu-item">⚖️ BMI Calculator <span>›</span></a>
 
-    if(total <= 20){
+<a href="blockchain.html" class="menu-item">⛓ Blockchain <span>›</span></a>
 
-        alert("⚠️ PERINGATAN!\n\nStok darah mulai menipis.\nSegera lakukan donor darah.");
+<a href="supplychain.html" class="menu-item">🚚 Supply Chain <span>›</span></a>
 
-    }
+<a href="qrcode.html" class="menu-item">📱 Scan QR Code <span>›</span></a>
 
-}
+<a href="history.html" class="menu-item">📜 Riwayat <span>›</span></a>
 
-// ===============================
-// Ringkasan Dashboard
-// ===============================
+<a href="about.html" class="menu-item">ℹ Tentang <span>›</span></a>
 
-function updateSummary(){
+<div class="dashboard">
 
-    const pendonor =
-    JSON.parse(localStorage.getItem("pendonor")) || [];
+<footer class="footer">
 
-    const rumah =
-    JSON.parse(localStorage.getItem("rumahsakit")) || [];
+<p>BloodChain Malaysia v6.0</p>
 
-    const blockchain =
-    JSON.parse(localStorage.getItem("blockchain")) || [];
+<p>Digital Supply Chain Transfusi Darah Berbasis Blockchain</p>
 
-    const stok =
-    JSON.parse(localStorage.getItem("stokdarah")) || [];
+<p>Version 6.0</p>
 
-    let total = 0;
+<p class="creator">
 
-    stok.forEach(function(item){
+Developed by
+<b>Mas Raden Adi Pranata Setiawan</b>
 
-        total += Number(item.jumlah)||0;
+</p>
 
-    });
+</footer>
 
-    document.getElementById("sumPendonor").textContent =
-    pendonor.length;
+<div class="bottom-nav">
 
-    document.getElementById("sumRumahSakit").textContent =
-    rumah.length;
+<a href="dashboard.html">🏠<br>Home</a>
 
-    document.getElementById("sumBlockchain").textContent =
-    blockchain.length;
+<a href="donor.html">🩸<br>Donor</a>
 
-    document.getElementById("sumStok").textContent =
-    total;
+<a href="stock.html">💉<br>Stok</a>
 
-}
+<a href="blockchain.html">⛓<br>Blockchain</a>
 
-// ===============================
-// Footer Otomatis
-// ===============================
+<a href="#">☰<br>Menu</a>
 
-console.log(
-"BloodChain Malaysia v6.0 berjalan dengan baik."
-);
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

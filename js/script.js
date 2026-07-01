@@ -731,3 +731,332 @@ for(let i=0;i<30;i++){
     document.body.appendChild(star);
 
 }
+
+// ==========================================
+// Dashboard BloodChain Malaysia 2026
+// ==========================================
+
+let chart = null;
+let pieChart = null;
+
+function animasiAngka(id, tujuan){
+
+    const elemen = document.getElementById(id);
+
+    if(!elemen) return;
+
+    let angka = 0;
+
+    const interval = setInterval(function(){
+
+        angka++;
+
+        elemen.textContent = angka;
+
+        if(angka >= tujuan){
+
+            clearInterval(interval);
+
+        }
+
+    },20);
+
+}
+
+// lanjutkan updateClock()
+// lanjutkan updateDashboard()
+// lanjutkan updateChart()
+// lanjutkan updatePieChart()
+// dst...
+
+// ==========================================
+// Grafik Statistik Dashboard
+// ==========================================
+
+function updateChart(){
+
+    const canvas = document.getElementById("chartBlood");
+
+    if(!canvas) return;
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    let label = [];
+    let data = [];
+
+    stok.forEach(function(item){
+
+        label.push(item.goldar || item.golongan);
+
+        data.push(Number(item.jumlah) || 0);
+
+    });
+
+    if(chart){
+
+        chart.destroy();
+
+    }
+
+    chart = new Chart(canvas,{
+
+        type:"bar",
+
+        data:{
+
+            labels:label,
+
+            datasets:[{
+
+                label:"Jumlah Kantong Darah",
+
+                data:data,
+
+                borderWidth:1
+
+            }]
+
+        },
+
+        options:{
+
+            responsive:true,
+
+            maintainAspectRatio:false,
+
+            scales:{
+
+                y:{
+
+                    beginAtZero:true
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
+
+// ==========================================
+// Diagram Pie Golongan Darah
+// ==========================================
+
+function updatePieChart(){
+
+    const canvas = document.getElementById("bloodPie");
+
+    if(!canvas) return;
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    let A=0;
+    let B=0;
+    let AB=0;
+    let O=0;
+
+    stok.forEach(function(item){
+
+        let jumlah = Number(item.jumlah)||0;
+
+        switch(item.goldar || item.golongan){
+
+            case "A":
+                A+=jumlah;
+                break;
+
+            case "B":
+                B+=jumlah;
+                break;
+
+            case "AB":
+                AB+=jumlah;
+                break;
+
+            case "O":
+                O+=jumlah;
+                break;
+
+        }
+
+    });
+
+    if(pieChart){
+
+        pieChart.destroy();
+
+    }
+
+    pieChart = new Chart(canvas,{
+
+        type:"pie",
+
+        data:{
+
+            labels:["A","B","AB","O"],
+
+            datasets:[{
+
+                data:[A,B,AB,O]
+
+            }]
+
+        },
+
+        options:{
+
+            responsive:true,
+
+            maintainAspectRatio:false
+
+        }
+
+    });
+
+}
+
+// ==========================================
+// Jalankan Dashboard
+// ==========================================
+
+if(document.getElementById("chartBlood")){
+
+    updateDashboard();
+
+    updateClock();
+
+    updateChart();
+
+    updatePieChart();
+
+    updateStatus();
+
+    updateProgress();
+
+    updateSummary();
+
+    checkLowStock();
+
+    setInterval(updateClock,1000);
+
+    setInterval(updateStatus,1000);
+
+}
+
+// ==========================================
+// Status Sistem
+// ==========================================
+
+function updateStatus(){
+
+    const lastUpdate = document.getElementById("lastUpdate");
+
+    if(lastUpdate){
+
+        lastUpdate.textContent =
+        new Date().toLocaleString("id-ID");
+
+    }
+
+}
+
+// ==========================================
+// Progress Bar
+// ==========================================
+
+function updateProgress(){
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    let total = 0;
+
+    stok.forEach(function(item){
+
+        total += Number(item.jumlah)||0;
+
+    });
+
+    const progress =
+    document.getElementById("stokProgress");
+
+    if(progress){
+
+        let persen = Math.min(total,100);
+
+        progress.style.width = persen + "%";
+
+        progress.textContent = persen + "%";
+
+    }
+
+}
+
+// ==========================================
+// Ringkasan Dashboard
+// ==========================================
+
+function updateSummary(){
+
+    const pendonor =
+    JSON.parse(localStorage.getItem("pendonor")) || [];
+
+    const rumah =
+    JSON.parse(localStorage.getItem("rumahsakit")) || [];
+
+    const blockchain =
+    JSON.parse(localStorage.getItem("blockchain")) || [];
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    let total = 0;
+
+    stok.forEach(function(item){
+
+        total += Number(item.jumlah)||0;
+
+    });
+
+    const p = document.getElementById("sumPendonor");
+    const r = document.getElementById("sumRumahSakit");
+    const s = document.getElementById("sumStok");
+    const b = document.getElementById("sumBlockchain");
+
+    if(p) p.textContent = pendonor.length;
+    if(r) r.textContent = rumah.length;
+    if(s) s.textContent = total;
+    if(b) b.textContent = blockchain.length;
+
+}
+
+// ==========================================
+// Peringatan Stok Darah
+// ==========================================
+
+function checkLowStock(){
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    let total = 0;
+
+    stok.forEach(function(item){
+
+        total += Number(item.jumlah)||0;
+
+    });
+
+    if(total <= 20){
+
+        console.log("Peringatan: stok darah mulai menipis.");
+
+    }
+
+}
+
+
