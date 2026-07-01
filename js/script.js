@@ -684,56 +684,6 @@ function(error){}
 
 }
 
-/* ===================================
-   PREMIUM GIANT BUBBLE (OPTIMIZED)
-=================================== */
-
-for(let i=0;i<4;i++){
-
-    let bubble=document.createElement("div");
-
-    bubble.className="bubble";
-
-    // Ukuran bubble 60 - 170 px
-    let size=60+Math.random()*110;
-
-    bubble.style.width=size+"px";
-    bubble.style.height=size+"px";
-
-    bubble.style.left=Math.random()*100+"%";
-
-    bubble.style.animationDuration=(28+Math.random()*18)+"s";
-    bubble.style.animationDelay=(Math.random()*15)+"s";
-
-    document.body.appendChild(bubble);
-
-}
-
-/* ===================================
-      PREMIUM STAR (OPTIMIZED)
-=================================== */
-
-for(let i=0;i<30;i++){
-
-    let star=document.createElement("div");
-
-    star.className="star";
-
-    // Ukuran bintang 3 - 7 px
-    let size=3+Math.random()*4;
-
-    star.style.width=size+"px";
-    star.style.height=size+"px";
-
-    star.style.left=Math.random()*100+"%";
-    star.style.top=Math.random()*100+"%";
-
-    star.style.animationDelay=Math.random()*4+"s";
-
-    document.body.appendChild(star);
-
-}
-
 // ==========================================
 // Dashboard BloodChain Malaysia 2026
 // ==========================================
