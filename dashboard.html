@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard BloodChain</title>
-
+<!DOCTYPE html> <html lang="id"> <head> 
+<meta charset="UTF-8"> <meta 
+name="viewport" 
+content="width=device-width, 
+initial-scale=1.0"> <title>Dashboard 
+BloodChain</title>
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -50,6 +49,8 @@
 
 <div class="card">
 
+
+
 <h3>Total Pendonor</h3>
 
 <h1 id="totalPendonor">0</h1>
@@ -84,21 +85,39 @@
 
 <div class="statistik">
 
-<h2>ℹ Informasi Sistem</h2>
+<h2>🕒 Jam Digital Malaysia</h2>
 
-<p>🩸 BloodChain Malaysia</p>
+<div id="digitalClock" class="digital-clock">
+00:00:00
+</div>
 
-<p>Version : <b>v5.0</b></p>
+<div id="digitalDate" class="digital-date">
+Rabu, 1 Juli 2026
+</div>
 
-<p>Status : <span id="statusServer">🟢 Online</span></p>
+</div>
 
-<p>Total Block : <span id="infoBlock">0</span></p>
+<div class="statistik">
 
-<p>Total Stok Darah : <span id="infoStok">0</span></p>
+<h2>📊 Grafik Statistik BloodChain</h2>
 
-<p>Waktu : <span id="jamSekarang"></span></p>
+<canvas id="chartBlood"
+style="width:100%;max-height:320px;">
+</canvas>
 
-<p>Last Update : <span id="lastUpdate"></span></p>
+</div>
+
+<div class="statistik">
+    ⛓ Diagram Flow Blockchain
+</div>
+
+<div class="statistik">
+
+<h2>🩸 Diagram Golongan Darah</h2>
+
+<canvas id="bloodPie"
+style="width:100%;max-height:320px;">
+</canvas>
 
 </div>
 
@@ -198,7 +217,7 @@ Menu Utama
 <footer class="footer">
 
 <p>
-BloodChain Malaysia v3.0
+BloodChain Malaysia v6.0
 </p>
 
 <p>
@@ -206,7 +225,7 @@ Digital Supply Chain Transfusi Darah Berbasis Blockchain
 </p>
 
 <p>
-Version v3.0
+Version v6.0
 </p>
 
 <p class="creator">
@@ -282,15 +301,26 @@ animasiAngka("totalStok",totalStok);
 
 animasiAngka("totalBlockchain",blockchain.length);
 
-document.getElementById("infoBlock").textContent=blockchain.length;
+function updateClock(){
 
-document.getElementById("infoStok").textContent=totalStok;
+const now=new Date();
 
-document.getElementById("jamSekarang").textContent=
-new Date().toLocaleTimeString();
+document.getElementById("digitalClock").innerHTML=
+now.toLocaleTimeString("id-ID");
 
-document.getElementById("lastUpdate").textContent=
-new Date().toLocaleDateString();
+document.getElementById("digitalDate").innerHTML=
+now.toLocaleDateString("id-ID",{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+});
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
 
 if(totalStok<20){
 
@@ -304,14 +334,119 @@ updateDashboard();
 
 window.addEventListener("storage",updateDashboard);
 
-setInterval(function(){
+window.addEventListener("storage",updateDashboard);
 
-document.getElementById("jamSekarang").textContent=
-new Date().toLocaleTimeString();
 
-},1000);
+
+// Tempel kode grafik di sini
+
+
+
+// Tempel kode grafik di sini
+
+let chart;
+
+function updateChart(){
+
+// seluruh kode Chart.js
+
+}
+
+updateChart();
+
+window.addEventListener("storage",updateChart);
+
+setInterval(updateChart,1000);
 
 </script>
+
+let pieChart;
+
+function updatePieChart(){
+
+const stok =
+JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+let A=0;
+let B=0;
+let AB=0;
+let O=0;
+
+stok.forEach(function(item){
+
+let jumlah=Number(item.jumlah)||0;
+
+switch(item.golongan){
+
+case "A":
+A+=jumlah;
+break;
+
+case "B":
+B+=jumlah;
+break;
+
+case "AB":
+AB+=jumlah;
+break;
+
+case "O":
+O+=jumlah;
+break;
+
+}
+
+});
+
+const dataPie=[A,B,AB,O];
+
+if(pieChart){
+
+pieChart.data.datasets[0].data=dataPie;
+pieChart.update();
+return;
+
+}
+
+pieChart=new Chart(
+
+document.getElementById("bloodPie"),
+
+{
+
+type:"pie",
+
+data:{
+
+labels:["A","B","AB","O"],
+
+datasets:[{
+
+data:dataPie
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+animation:{
+duration:800
+}
+
+}
+
+});
+
+}
+
+updatePieChart();
+
+window.addEventListener("storage",updatePieChart);
+
+setInterval(updatePieChart,1000);
 
 <script>
 
@@ -332,6 +467,8 @@ document.querySelector(".admin").classList.remove("active");
 }
 
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="js/script.js"></script>
 
