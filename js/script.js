@@ -26,19 +26,19 @@ tabel.innerHTML+=`
 
 <td>
 
-<button onclick="hapusData(${index})">
+function hapusData(index){
 
-Hapus
+    dataPendonor.splice(index,1);
 
-</button>
+    localStorage.setItem("pendonor",JSON.stringify(dataPendonor));
 
-</td>
+    tampilkanData();
 
-</tr>
-
-`;
-
-});
+    updateDashboard();
+    updateSummary();
+    updateChart();
+    updatePieChart();
+    updateProgress();
 
 }
 
@@ -84,15 +84,29 @@ document.getElementById("lokasi").value="";
 
 tampilkanData();
 
+showToast("✅ Data pendonor berhasil disimpan");
+
+updateDashboard();
+updateChart();
+updatePieChart();
+updateProgress();
+updateSummary();
+
 }
 
 function hapusData(index){
 
-dataPendonor.splice(index,1);
+    dataPendonor.splice(index,1);
 
-localStorage.setItem("pendonor",JSON.stringify(dataPendonor));
+    localStorage.setItem("pendonor",JSON.stringify(dataPendonor));
 
-tampilkanData();
+    tampilkanData();
+
+    updateDashboard();
+    updateChart();
+    updatePieChart();
+    updateProgress();
+    updateSummary();
 
 }
 
@@ -123,19 +137,16 @@ tabel.innerHTML+=`
 
 <td>
 
-<button onclick="hapusRs(${index})">
+function hapusRs(index){
 
-Hapus
+    dataRs.splice(index,1);
 
-</button>
+    localStorage.setItem("rumahsakit",JSON.stringify(dataRs));
 
-</td>
+    tampilRs();
 
-</tr>
-
-`;
-
-});
+    updateDashboard();
+    updateSummary();
 
 }
 
@@ -179,15 +190,23 @@ document.getElementById("telepon").value="";
 
 tampilRs();
 
+showToast("🏥 Rumah sakit berhasil ditambahkan");
+
+updateDashboard();
+updateSummary();
+
 }
 
 function hapusRs(index){
 
-dataRs.splice(index,1);
+    dataRs.splice(index,1);
 
-localStorage.setItem("rumahsakit",JSON.stringify(dataRs));
+    localStorage.setItem("rumahsakit",JSON.stringify(dataRs));
 
-tampilRs();
+    tampilRs();
+
+    updateDashboard();
+    updateSummary();
 
 }
 
@@ -214,19 +233,19 @@ tabel.innerHTML+=`
 
 <td>
 
-<button onclick="hapusStok(${index})">
+function hapusStok(index){
 
-Hapus
+    dataStok.splice(index,1);
 
-</button>
+    localStorage.setItem("stokdarah",JSON.stringify(dataStok));
 
-</td>
+    tampilStok();
 
-</tr>
-
-`;
-
-});
+    updateDashboard();
+    updateSummary();
+    updateChart();
+    updatePieChart();
+    updateProgress();
 
 }
 
@@ -258,15 +277,29 @@ document.getElementById("jumlah").value="";
 
 tampilStok();
 
+showToast("🩸 Stok darah berhasil ditambahkan");
+
+updateDashboard();
+updateChart();
+updatePieChart();
+updateProgress();
+updateSummary();
+
 }
 
 function hapusStok(index){
 
-dataStok.splice(index,1);
+    dataStok.splice(index,1);
 
-localStorage.setItem("stokdarah",JSON.stringify(dataStok));
+    localStorage.setItem("stokdarah",JSON.stringify(dataStok));
 
-tampilStok();
+    tampilStok();
+
+    updateDashboard();
+    updateChart();
+    updatePieChart();
+    updateProgress();
+    updateSummary();
 
 }
 
@@ -468,54 +501,70 @@ document.getElementById("hospital").value="";
 
 tampilBlockchain();
 
+showToast("⛓ Block blockchain berhasil dibuat");
+
+updateDashboard();
+updateSummary();
+
 }
 
 tampilBlockchain();
 let distribusi=JSON.parse(localStorage.getItem("distribusi"))||[];
 
-function tampilDistribusi(){
+function tambahDistribusi(){
 
-let tabel=document.getElementById("tabelDistribusi");
+let id=document.getElementById("kantong").value;
 
-if(!tabel)return;
+let asal=document.getElementById("asal").value;
 
-tabel.innerHTML="";
+let tujuan=document.getElementById("tujuan").value;
 
-distribusi.forEach(function(item,index){
+let status=document.getElementById("status").value;
 
-tabel.innerHTML+=`
+if(id==""||asal==""||tujuan==""){
 
-<tr>
+alert("Lengkapi semua data.");
 
-<td>${item.id}</td>
+return;
 
-<td>${item.asal}</td>
+}
 
-<td>${item.tujuan}</td>
+distribusi.push({
 
-<td>${item.status}</td>
+id:id,
 
-<td>${item.waktu}</td>
+asal:asal,
 
-<td>
+tujuan:tujuan,
 
-<button onclick="editDistribusi(${index})">
-✏️ Edit
-</button>
+status:status,
 
-<button onclick="hapusDistribusi(${index})">
-🗑 Hapus
-</button>
-
-</td>
-
-</tr>
-
-`;
+waktu:new Date().toLocaleString("id-ID")
 
 });
 
+localStorage.setItem(
+
+"distribusi",
+
+JSON.stringify(distribusi)
+
+);
+
+document.getElementById("kantong").value="";
+
+document.getElementById("asal").value="";
+
+document.getElementById("tujuan").value="";
+
+tampilDistribusi();
+
+updateSummary();
+
+updateStatus();
+
 }
+
 function hapusDistribusi(index){
 
 distribusi.splice(index,1);
@@ -524,6 +573,12 @@ localStorage.setItem(
 "distribusi",
 JSON.stringify(distribusi)
 );
+
+tampilDistribusi();
+
+showToast("🚚 Data supply chain berhasil disimpan");
+
+if(document.getElementById("tabelDistribusi")){
 
 tampilDistribusi();
 
@@ -549,7 +604,37 @@ localStorage.setItem(
 JSON.stringify(distribusi)
 );
 
+data.sort(function(a,b){
+
+return new Date(b.waktu)-new Date(a.waktu);
+
+});
+
+// Update halaman riwayat
+tampilHistory();
+
+// Refresh dashboard bila sedang dibuka
+updateDashboard();
+updateSummary();
+
 tampilDistribusi();
+
+function hapusDistribusi(index){
+
+distribusi.splice(index,1);
+
+localStorage.setItem(
+"distribusi",
+JSON.stringify(distribusi)
+);
+
+tampilDistribusi();
+tampilHistory();
+
+updateDashboard();
+updateSummary();
+
+}
 
 }
 
@@ -774,23 +859,49 @@ function updateChart(){
 
         options:{
 
-            responsive:true,
+responsive:true,
 
-            maintainAspectRatio:false,
+maintainAspectRatio:false,
 
-            scales:{
+plugins:{
 
-                y:{
+legend:{
+display:false
+},
 
-                    beginAtZero:true
+title:{
+display:true,
+text:"Statistik Kantong Darah"
+}
 
-                }
+},
 
-            }
+scales:{
 
-        }
+x:{
 
-    });
+ticks:{
+font:{
+size:10
+}
+}
+
+},
+
+y:{
+
+beginAtZero:true,
+
+ticks:{
+stepSize:5,
+font:{
+size:10
+}
+}
+
+}
+
+}
 
 }
 
@@ -863,16 +974,31 @@ function updatePieChart(){
 
         options:{
 
-            responsive:true,
+responsive:true,
 
-            maintainAspectRatio:false
+maintainAspectRatio:false,
 
-        }
+plugins:{
 
-    });
+legend:{
+
+position:"bottom",
+
+labels:{
+
+boxWidth:12,
+
+font:{
+size:11
+}
 
 }
 
+}
+
+}
+
+}
 // ==========================================
 // Jalankan function Oclock
 // ==========================================
@@ -958,6 +1084,25 @@ if (document.getElementById("chartBlood")) {
         updateDashboard();
         updateChart();
         updatePieChart();
+
+options:{
+
+responsive:true,
+
+maintainAspectRatio:false,
+
+plugins:{
+
+legend:{
+
+position:"bottom"
+
+}
+
+}
+
+}
+
         updateProgress();
         updateSummary();
     });
@@ -1090,6 +1235,38 @@ function toggleAdminMenu(){
     }else{
         menu.style.display = "block";
     }
+
+}
+
+// ===============================
+// TOAST NOTIFICATION
+// ===============================
+
+function showToast(pesan){
+
+let toast=document.getElementById("toast");
+
+if(!toast){
+
+toast=document.createElement("div");
+
+toast.id="toast";
+
+toast.className="toast";
+
+document.body.appendChild(toast);
+
+}
+
+toast.textContent=pesan;
+
+toast.classList.add("show");
+
+setTimeout(function(){
+
+toast.classList.remove("show");
+
+},2500);
 
 }
 
