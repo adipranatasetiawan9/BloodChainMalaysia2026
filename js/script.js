@@ -741,7 +741,8 @@ let pieChart = null;
 
 function animasiAngka(id, tujuan){
 
-    const elemen = document.getElementById(id);
+    const elemen = 
+    document.getElementById(id);
 
     if(!elemen) return;
 
@@ -847,43 +848,42 @@ function updateChart(){
 
 function updatePieChart(){
 
-    const canvas = document.getElementById("bloodPie");
-
-    if(!canvas) return;
-
     const stok =
     JSON.parse(localStorage.getItem("stokdarah")) || [];
 
-    let A=0;
-    let B=0;
-    let AB=0;
-    let O=0;
+    let A = 0;
+    let B = 0;
+    let AB = 0;
+    let O = 0;
 
     stok.forEach(function(item){
 
-        let jumlah = Number(item.jumlah)||0;
+        const jumlah = Number(item.jumlah) || 0;
+        const goldar = item.goldar || item.golongan || "";
 
-        switch(item.goldar || item.golongan){
+        if(goldar.startsWith("AB+")){
 
-            case "A":
-                A+=jumlah;
-                break;
+            AB += jumlah;
 
-            case "B":
-                B+=jumlah;
-                break;
+        }else if(goldar.startsWith("A+")){
 
-            case "AB":
-                AB+=jumlah;
-                break;
+            A += jumlah;
 
-            case "O":
-                O+=jumlah;
-                break;
+        }else if(goldar.startsWith("B+")){
+
+            B += jumlah;
+
+        }else if(goldar.startsWith("O+")){
+
+            O += jumlah;
 
         }
 
     });
+
+    const canvas = document.getElementById("bloodPie");
+
+    if(!canvas) return;
 
     if(pieChart){
 
@@ -897,11 +897,13 @@ function updatePieChart(){
 
         data:{
 
-            labels:["A","B","AB","O"],
+            labels:["A+","B+","AB+","O+"],
 
             datasets:[{
 
-                data:[A,B,AB,O]
+                label:"Golongan Darah",
+
+                data:[A+,B+,AB+,O+]
 
             }]
 
@@ -920,30 +922,93 @@ function updatePieChart(){
 }
 
 // ==========================================
+// Jalankan function Oclock
+// ==========================================
+
+function updateClock(){
+
+    const jam = document.getElementById("digitalClock");
+    const tanggal = document.getElementById("digitalDate");
+
+    const now = new Date();
+
+    if(jam){
+
+        jam.textContent =
+        now.toLocaleTimeString("id-ID");
+
+    }
+
+    if(tanggal){
+
+        tanggal.textContent =
+        now.toLocaleDateString("id-ID",{
+
+            weekday:"long",
+            day:"numeric",
+            month:"long",
+            year:"numeric"
+
+        });
+
+    }
+
+}
+
+function updateDashboard(){
+
+    const pendonor =
+    JSON.parse(localStorage.getItem("pendonor")) || [];
+
+    const rumah =
+    JSON.parse(localStorage.getItem("rumahsakit")) || [];
+
+    const stok =
+    JSON.parse(localStorage.getItem("stokdarah")) || [];
+
+    const blockchain =
+    JSON.parse(localStorage.getItem("blockchain")) || [];
+
+    let total = 0;
+
+    stok.forEach(function(item){
+
+        total += Number(item.jumlah)||0;
+
+    });
+
+    animasiAngka("totalPendonor",pendonor.length);
+    animasiAngka("totalRumahSakit",rumah.length);
+    animasiAngka("totalStok",total);
+    animasiAngka("totalBlockchain",blockchain.length);
+
+}
+
+// ==========================================
 // Jalankan Dashboard
 // ==========================================
 
-if(document.getElementById("chartBlood")){
+if (document.getElementById("chartBlood")) {
 
     updateDashboard();
-
     updateClock();
-
     updateChart();
-
     updatePieChart();
-
     updateStatus();
-
     updateProgress();
-
     updateSummary();
-
     checkLowStock();
 
-    setInterval(updateClock,1000);
+    setInterval(updateClock, 1000);
+    setInterval(updateStatus, 1000);
 
-    setInterval(updateStatus,1000);
+    window.addEventListener("storage", function () {
+        updateDashboard();
+        updateChart();
+        updatePieChart();
+        updateProgress();
+        updateSummary();
+    });
 
 }
 
