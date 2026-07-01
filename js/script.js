@@ -1,3 +1,5 @@
+console.log("SCRIPT BERHASIL DIMUAT");
+
 let dataPendonor=JSON.parse(localStorage.getItem("pendonor"))||[];
 
 function tampilkanData(){
@@ -861,21 +863,21 @@ function updatePieChart(){
         const jumlah = Number(item.jumlah) || 0;
         const goldar = item.goldar || item.golongan || "";
 
-        if(goldar.startsWith("AB+")){
+        if(goldar.startsWith("AB")){
 
-            AB += jumlah;
+            AB = jumlah;
 
-        }else if(goldar.startsWith("A+")){
+        }else if(goldar.startsWith("A")){
 
-            A += jumlah;
+            A = jumlah;
 
-        }else if(goldar.startsWith("B+")){
+        }else if(goldar.startsWith("B")){
 
-            B += jumlah;
+            B = jumlah;
 
-        }else if(goldar.startsWith("O+")){
+        }else if(goldar.startsWith("O")){
 
-            O += jumlah;
+            O = jumlah;
 
         }
 
@@ -897,13 +899,13 @@ function updatePieChart(){
 
         data:{
 
-            labels:["A+","B+","AB+","O+"],
+            labels:["A","B","AB","O"],
 
             datasets:[{
 
                 label:"Golongan Darah",
 
-                data:[A+,B+,AB+,O+]
+                data:[A,B,AB,O]
 
             }]
 
@@ -1124,4 +1126,20 @@ function checkLowStock(){
 
 }
 
+// ==========================================
+// Toggle Menu Admin
+// ==========================================
+function toggleAdminMenu(){
+
+    const menu = document.getElementById("adminMenu");
+
+    if(!menu) return;
+
+    if(menu.style.display === "block"){
+        menu.style.display = "none";
+    }else{
+        menu.style.display = "block";
+    }
+
+}
 
