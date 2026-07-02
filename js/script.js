@@ -1100,3 +1100,9 @@ LOGIN
 </button>
 
 </form>
+
+setInterval(updateClock,1000);
+
+setInterval(updateStatus,1000);
+
+});
