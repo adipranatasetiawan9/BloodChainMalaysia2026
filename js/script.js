@@ -1081,4 +1081,29 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
+function loginAdmin(){
+
+    const email = document.getElementById("email").value.trim();
+
+    const password = document.getElementById("password").value;
+
+    if(
+        email === "admin@bloodchain.my" &&
+        password === "BloodChain2026"
+    ){
+
+        alert("Login berhasil.");
+
+        window.location.href="dashboard.html";
+
+        return false;
+
+    }
+
+    alert("Email atau password salah.");
+
+    return false;
+
+}
+
 
