@@ -534,19 +534,18 @@ font-size:34px;
 color:#c62828;
 }
 
-/* ==========================
-LOGIN FUTURISTIK
-========================== */
+/* ============================= */
+/* LOGIN FUTURISTIK BLOODCHAIN */
+/* ============================= */
 
-body{
+body.login-page{
 
 margin:0;
-
 padding:0;
 
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 
-background:linear-gradient(135deg,#7f0000,#c62828,#ffffff);
+background:linear-gradient(135deg,#7b0000,#c1121f,#111827);
 
 min-height:100vh;
 
@@ -562,107 +561,127 @@ align-items:center;
 
 width:100%;
 
+padding:20px;
+
 display:flex;
 
 justify-content:center;
 
-padding:20px;
+align-items:center;
 
 }
 
-.login-box{
+.login-card{
 
 width:100%;
 
-max-width:360px;
+max-width:420px;
 
-background:rgba(255,255,255,.95);
-
-padding:30px;
+padding:35px;
 
 border-radius:20px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 0 30px rgba(255,0,0,.45);
 
 text-align:center;
 
+color:#fff;
+
 }
 
-.login-box h1{
+.logo{
+
+margin-bottom:25px;
+
+}
+
+.logo h1{
+
+margin:5px 0;
+
+font-size:38px;
+
+color:#ffffff;
+
+}
+
+.logo h3{
 
 margin:0;
 
-font-size:30px;
-
-color:#c62828;
+color:#ffb3b3;
 
 }
 
-.login-box p{
+.logo p{
 
 font-size:14px;
 
-color:#666;
+color:#dddddd;
+
+}
+
+.login-card h2{
 
 margin-bottom:20px;
 
 }
 
-.login-box h3{
-
-font-size:18px;
-
-margin-bottom:20px;
-
-color:#333;
-
-}
-
-.login-box input{
-
-width:100%;
-
-padding:12px;
-
-margin-bottom:15px;
-
-border:none;
-
-border-radius:12px;
-
-background:#f2f2f2;
-
-font-size:14px;
-
-box-sizing:border-box;
-
-}
-
-.login-box input:focus{
-
-outline:none;
-
-background:#fff;
-
-border:2px solid #c62828;
-
-}
-
-.login-box button{
+.login-card input{
 
 width:100%;
 
 padding:14px;
 
-background:#c62828;
-
-color:#fff;
+margin:10px 0;
 
 border:none;
 
 border-radius:12px;
 
+background:rgba(255,255,255,.15);
+
+color:#fff;
+
 font-size:15px;
+
+box-sizing:border-box;
+
+outline:none;
+
+}
+
+.login-card input::placeholder{
+
+color:#dddddd;
+
+}
+
+.login-card button{
+
+width:100%;
+
+padding:15px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:#ff1e1e;
+
+color:white;
+
+font-size:17px;
 
 font-weight:bold;
 
@@ -672,21 +691,1351 @@ transition:.3s;
 
 }
 
-.login-box button:hover{
+.login-card button:hover{
 
-background:#8e0000;
+background:#ff4444;
 
-transform:scale(1.02);
+transform:scale(1.03);
+
+box-shadow:0 0 20px red;
 
 }
 
-.copyright{
+.login-footer{
 
 margin-top:20px;
 
-font-size:12px;
+font-size:13px;
 
-color:#777;
+color:#dddddd;
 
 }
+
+@media(max-width:600px){
+
+.login-card{
+
+padding:25px;
+
+}
+
+.logo h1{
+
+font-size:30px;
+
+}
+
+}
+
+/* ================================= */
+/* EFEK FUTURISTIK LOGIN */
+/* ================================= */
+
+.login-card{
+
+animation:fadeLogin 1.2s ease;
+
+}
+
+@keyframes fadeLogin{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px) scale(.95);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+.logo{
+
+animation:logoGlow 3s infinite alternate;
+
+}
+
+@keyframes logoGlow{
+
+0%{
+
+text-shadow:0 0 10px rgba(255,0,0,.4);
+
+}
+
+100%{
+
+text-shadow:
+
+0 0 10px red,
+
+0 0 20px red,
+
+0 0 35px crimson;
+
+}
+
+}
+
+.login-card:hover{
+
+transform:translateY(-4px);
+
+transition:.4s;
+
+box-shadow:
+
+0 0 20px red,
+
+0 0 45px rgba(255,0,0,.4);
+
+}
+
+.login-card input:focus{
+
+border:1px solid #ff4444;
+
+box-shadow:0 0 15px red;
+
+}
+
+.login-page{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.login-page::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:radial-gradient(circle,rgba(255,0,0,.25),transparent 70%);
+
+top:-250px;
+
+right:-250px;
+
+border-radius:50%;
+
+animation:moveLight 8s infinite alternate;
+
+}
+
+.login-page::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+background:radial-gradient(circle,rgba(255,255,255,.08),transparent 70%);
+
+bottom:-220px;
+
+left:-220px;
+
+border-radius:50%;
+
+animation:moveLight2 10s infinite alternate;
+
+}
+
+@keyframes moveLight{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(-120px);
+
+}
+
+}
+
+@keyframes moveLight2{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-120px);
+
+}
+
+}
+
+/* ================================= */
+/* DASHBOARD PREMIUM */
+/* ================================= */
+
+.dashboard-cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+
+gap:18px;
+
+margin:20px 0;
+
+}
+
+.dashboard-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:18px;
+
+padding:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 0 20px rgba(255,0,0,.25);
+
+transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 0 18px red,
+
+0 0 35px rgba(255,0,0,.45);
+
+}
+
+.card-icon{
+
+font-size:36px;
+
+margin-bottom:10px;
+
+}
+
+.dashboard-card h4{
+
+margin:0;
+
+font-size:15px;
+
+color:#dddddd;
+
+}
+
+.dashboard-card h1{
+
+margin-top:12px;
+
+font-size:34px;
+
+color:#ffffff;
+
+}
+
+/* ============================= */
+/* FOOTER PREMIUM */
+/* ============================= */
+
+.footer{
+
+margin-top:40px;
+
+padding:25px;
+
+text-align:center;
+
+background:#111;
+
+color:#fff;
+
+border-top:2px solid #ff2d2d;
+
+}
+
+.footer h3{
+
+margin-bottom:8px;
+
+color:#ff4444;
+
+}
+
+.footer p{
+
+font-size:14px;
+
+margin:5px 0;
+
+color:#dddddd;
+
+}
+
+/* ============================= */
+/* BOTTOM NAVIGATION */
+/* ============================= */
+
+.bottom-nav{
+
+position:fixed;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+height:65px;
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+background:#121212;
+
+border-top:2px solid #ff3333;
+
+z-index:999;
+
+}
+
+.bottom-nav a{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-decoration:none;
+
+color:#ffffff;
+
+font-size:12px;
+
+transition:.3s;
+
+}
+
+.bottom-nav a:hover{
+
+color:#ff4444;
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   BLOODCHAIN MALAYSIA 2026 FUTURISTIC UI
+========================================== */
+
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:#05070d;
+
+    background-image:
+    radial-gradient(circle at top,#8b0000 0%,transparent 35%),
+    radial-gradient(circle at bottom,#001b3a 0%,transparent 35%);
+
+    color:#ffffff;
+
+}
+
+/* Glass Card */
+
+.glass-card{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    margin:20px;
+
+    box-shadow:0 0 25px rgba(255,0,0,.25);
+
+}
+
+/* Judul */
+
+.page-title{
+
+    text-align:center;
+
+    margin:25px;
+
+}
+
+.page-title h2{
+
+    color:#ff4d4d;
+
+    font-size:30px;
+
+}
+
+.page-title p{
+
+    color:#d0d0d0;
+
+}
+
+/* Input */
+
+input,
+select{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#151b28;
+
+    color:#ffffff;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#c40000,#ff2d2d);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 18px red;
+
+}
+
+/* Table */
+
+.modern-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.modern-table th{
+
+    background:#c40000;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+.modern-table td{
+
+    padding:12px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+}
+
+.modern-table tr:hover{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* ===== DASHBOARD CARD ===== */
+
+.dashboard-cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin:25px;
+
+}
+
+.dashboard-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:18px;
+
+padding:25px;
+
+text-align:center;
+
+transition:.35s;
+
+box-shadow:0 0 20px rgba(255,0,0,.18);
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 35px rgba(255,0,0,.45);
+
+}
+
+.icon-card{
+
+font-size:50px;
+
+margin-bottom:12px;
+
+}
+
+.dashboard-card h3{
+
+color:#ff5757;
+
+margin-bottom:10px;
+
+}
+
+.dashboard-card h1{
+
+font-size:40px;
+
+margin:0;
+
+color:white;
+
+}
+
+.dashboard-card p{
+
+color:#bbbbbb;
+
+font-size:14px;
+
+}
+
+/* =====================================
+   DASHBOARD PREMIUM
+===================================== */
+
+.statistik{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:18px;
+
+padding:20px;
+
+margin:20px;
+
+box-shadow:0 0 20px rgba(255,0,0,.15);
+
+}
+
+.statistik h2{
+
+color:#ff4444;
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+/* JAM */
+
+.digital-clock{
+
+font-size:42px;
+
+font-weight:bold;
+
+text-align:center;
+
+color:#00ffff;
+
+letter-spacing:3px;
+
+}
+
+.digital-date{
+
+margin-top:10px;
+
+text-align:center;
+
+color:#d8d8d8;
+
+}
+
+/* STATUS */
+
+.system-status{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:15px;
+
+}
+
+.status-item{
+
+background:#101827;
+
+padding:18px;
+
+border-radius:12px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+/* PROGRESS */
+
+.progress-container{
+
+background:#222;
+
+height:24px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(90deg,#ff0000,#ff6b6b);
+
+color:white;
+
+font-weight:bold;
+
+text-align:center;
+
+transition:1s;
+
+}
+
+/* SUMMARY */
+
+.summary-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.summary-table td{
+
+padding:14px;
+
+border-bottom:1px solid rgba(255,255,255,.12);
+
+}
+
+.summary-table tr:hover{
+
+background:rgba(255,255,255,.05);
+
+}
+
+/* =====================================
+   FUTURISTIC MENU
+===================================== */
+
+.judul-menu{
+
+margin:25px;
+
+text-align:center;
+
+font-size:28px;
+
+color:#ff5555;
+
+font-weight:bold;
+
+}
+
+.menu-item{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px;
+
+margin:15px 20px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.10);
+
+text-decoration:none;
+
+color:white;
+
+font-size:17px;
+
+transition:.35s;
+
+box-shadow:0 0 18px rgba(255,0,0,.15);
+
+}
+
+.menu-item:hover{
+
+transform:translateX(8px);
+
+background:linear-gradient(90deg,#8b0000,#d60000);
+
+box-shadow:0 0 25px red;
+
+}
+
+.menu-item span{
+
+font-size:24px;
+
+color:#00ffff;
+
+font-weight:bold;
+
+}
+
+/* =====================================
+   FOOTER FUTURISTIC
+===================================== */
+
+.footer{
+
+margin-top:40px;
+
+padding:25px;
+
+text-align:center;
+
+background:#0b1220;
+
+border-top:2px solid #ff0000;
+
+color:#d5d5d5;
+
+}
+
+.footer p{
+
+margin:8px;
+
+}
+
+.creator{
+
+color:#00ffff;
+
+font-weight:bold;
+
+}
+
+/* =====================================
+   BOTTOM NAVIGATION
+===================================== */
+
+.bottom-nav{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-around;
+
+background:#08111f;
+
+border-top:2px solid #ff0000;
+
+padding:12px 0;
+
+z-index:999;
+
+}
+
+.bottom-nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:13px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.bottom-nav a:hover{
+
+color:#00ffff;
+
+transform:scale(1.12);
+
+}
+
+/* =====================================
+   FUTURISTIC TABLE
+===================================== */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+th{
+
+background:linear-gradient(90deg,#8b0000,#ff0000);
+
+color:white;
+
+padding:15px;
+
+font-size:15px;
+
+}
+
+td{
+
+padding:14px;
+
+text-align:center;
+
+border-bottom:1px solid rgba(255,255,255,.10);
+
+color:#eeeeee;
+
+}
+
+tr:hover{
+
+background:rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+/* =====================================
+   FUTURISTIC FORM
+===================================== */
+
+input,
+select,
+textarea{
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+background:#101827;
+
+border:1px solid #444;
+
+border-radius:10px;
+
+color:white;
+
+font-size:15px;
+
+box-sizing:border-box;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+outline:none;
+
+border:1px solid #00ffff;
+
+box-shadow:0 0 15px cyan;
+
+}
+
+/* =====================================
+   FUTURISTIC BUTTON
+===================================== */
+
+button{
+
+background:linear-gradient(90deg,#b30000,#ff0000);
+
+border:none;
+
+padding:12px 24px;
+
+border-radius:10px;
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 20px red;
+
+}
+
+/* =====================================
+   PAGE TITLE
+===================================== */
+
+.page-title{
+
+text-align:center;
+
+font-size:30px;
+
+margin:25px;
+
+color:#ff4444;
+
+font-weight:bold;
+
+text-shadow:0 0 15px red;
+
+}
+
+/* ===========================
+   FUTURISTIC TABLE V7
+=========================== */
+
+.table-box{
+    width:100%;
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(18,28,48,.88);
+    border:1px solid rgba(0,255,255,.25);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+thead{
+    background:linear-gradient(90deg,#00d4ff,#005eff);
+}
+
+thead th{
+    padding:14px;
+    color:#fff;
+    font-size:14px;
+    text-align:center;
+}
+
+tbody td{
+    padding:12px;
+    color:#eafcff;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+tbody tr:hover{
+    background:rgba(0,255,255,.08);
+}
+
+button{
+    background:linear-gradient(90deg,#00d4ff,#005eff);
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00e5ff;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border-radius:8px;
+    border:1px solid #00d4ff;
+    background:#111827;
+    color:white;
+}
+
+.form-card{
+    background:rgba(18,28,48,.9);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    border:1px solid rgba(0,255,255,.25);
+}
+
+@media(max-width:768px){
+
+table{
+    font-size:12px;
+}
+
+thead th,
+tbody td{
+    padding:8px;
+}
+
+button{
+    font-size:12px;
+    padding:6px 10px;
+}
+
+}
+
+/* =======================================
+   FUTURISTIC TABLE
+======================================= */
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
+    margin-top:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(10,20,45,.75);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(0,255,255,.25);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+table thead{
+    background:linear-gradient(90deg,#00e5ff,#0066ff);
+}
+
+table thead th{
+    color:#fff;
+    padding:14px;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+table tbody td{
+    padding:12px;
+    color:#e6f8ff;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    text-align:center;
+}
+
+table tbody tr:hover{
+    background:rgba(0,255,255,.08);
+    transition:.3s;
+}
+
+table button{
+    background:linear-gradient(135deg,#00e5ff,#0066ff);
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+table button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00e5ff;
+}
+
+@media(max-width:768px){
+
+table thead th,
+table tbody td{
+
+font-size:12px;
+padding:10px;
+
+}
+
+}
+
+/* =====================================
+   FUTURISTIC FORM V8
+===================================== */
+
+.form-card{
+
+background:rgba(15,23,42,.85);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(0,255,255,.25);
+
+border-radius:18px;
+
+padding:25px;
+
+margin:20px;
+
+box-shadow:0 0 25px rgba(0,229,255,.15);
+
+}
+
+.form-card h2,
+.form-card h3{
+
+text-align:center;
+
+color:#00e5ff;
+
+margin-bottom:20px;
+
+}
+
+.form-group{
+
+margin-bottom:18px;
+
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+color:#c8f7ff;
+
+font-weight:bold;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+width:100%;
+
+padding:14px;
+
+border-radius:10px;
+
+border:1px solid rgba(0,229,255,.35);
+
+background:#0f172a;
+
+color:white;
+
+font-size:15px;
+
+box-sizing:border-box;
+
+transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+outline:none;
+
+border-color:#00e5ff;
+
+box-shadow:0 0 15px rgba(0,229,255,.45);
+
+}
+
+.form-card button{
+
+width:100%;
+
+padding:14px;
+
+background:linear-gradient(90deg,#00b4ff,#0066ff);
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.form-card button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 0 18px #00e5ff;
+
+}
+
+@media(max-width:768px){
+
+.form-card{
+
+margin:12px;
+
+padding:18px;
+
+}
+
+.form-card h2{
+
+font-size:22px;
+
+}
+
+}
+
 

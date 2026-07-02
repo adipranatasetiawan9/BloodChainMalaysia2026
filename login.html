@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login Administrator</title>
 
-<link rel="stylesheet" href="css/style.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>BloodChain Malaysia 2026</title>
+
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
@@ -15,18 +21,35 @@
 
 <div class="login-card">
 
-<h1>🩸 BloodChain</h1>
+<div class="logo">
+
+🩸
+
+<h1>BloodChain</h1>
 
 <h3>Malaysia 2026</h3>
 
-<p>Login Administrator</p>
+<p>
 
-<form id="loginForm">
+Digital Blood Supply Chain
+Blockchain Platform
+
+</p>
+
+</div>
+
+<h2>
+
+Administrator Login
+
+</h2>
+
+<form onsubmit="return loginAdmin()">
 
 <input
 type="email"
 id="email"
-placeholder="Email Administrator"
+placeholder="Administrator Email"
 required>
 
 <input
@@ -36,38 +59,26 @@ placeholder="Password"
 required>
 
 <button type="submit">
-Masuk
+
+LOGIN
+
 </button>
 
 </form>
 
+<div class="login-footer">
+
+Secure Authentication
+
+Blockchain Technology
+
+</div>
+
 </div>
 
 </div>
 
-<script>
-
-document.getElementById("loginForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-const email=document.getElementById("email").value;
-
-const password=document.getElementById("password").value;
-
-if(email==="admin@bloodchain.my" && password==="admin123"){
-
-window.location="dashboard.html";
-
-}else{
-
-alert("Email atau Password salah!");
-
-}
-
-});
-
-</script>
+<script src="js/script.js"></script>
 
 </body>
 
