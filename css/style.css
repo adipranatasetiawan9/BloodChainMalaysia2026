@@ -2047,4 +2047,29 @@ font-size:22px;
 
 }
 
+/* ===== FIX FLOW BLOCKCHAIN ===== */
+
+.flow-box{
+    background:#ffffff !important;
+    color:#111111 !important;
+    text-shadow:none !important;
+}
+
+.flow-box *{
+    color:#111111 !important;
+    text-shadow:none !important;
+    opacity:1 !important;
+}
+
+.flow-box small{
+    color:#333333 !important;
+    font-size:14px !important;
+    font-weight:700 !important;
+}
+
+.arrow{
+    color:#00bfff !important;
+    font-size:24px !important;
+    font-weight:bold;
+}
 

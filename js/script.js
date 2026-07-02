@@ -1081,28 +1081,20 @@ document.addEventListener("DOMContentLoaded",function(){
 
 });
 
-<form onsubmit="return loginAdmin()">
+function loginAdmin(){
 
-<input
-type="email"
-id="email"
-placeholder="Administrator Email"
-required>
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
-<input
-type="password"
-id="password"
-placeholder="Password"
-required>
+    if(
+        email === "admin@bloodchain.my" &&
+        password === "BloodChain2026"
+    ){
+        alert("Login berhasil.");
+        window.location.href = "dashboard.html";
+        return false;
+    }
 
-<button type="submit">
-LOGIN
-</button>
-
-</form>
-
-setInterval(updateClock,1000);
-
-setInterval(updateStatus,1000);
-
-});
+    alert("Email atau password salah.");
+    return false;
+}
